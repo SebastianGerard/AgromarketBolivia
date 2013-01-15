@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldClient", "HelloWo
 		{FD2620A2-5B25-4F6E-9A10-92C54DF9F95A} = {FD2620A2-5B25-4F6E-9A10-92C54DF9F95A}
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Service", "Service", "{FD2620A2-5B25-4F6E-9A10-92C54DF9F95A}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Service", "Service\", "{FD2620A2-5B25-4F6E-9A10-92C54DF9F95A}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/Service"
@@ -23,7 +23,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Service", "Service", "{FD26
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "3544"
+		VWDPort = "4358"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject

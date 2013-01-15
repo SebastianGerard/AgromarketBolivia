@@ -13,8 +13,11 @@ namespace HelloWorldClient
         static void Main(string[] args)
         {
             int i = 1;
-            HelloWorldClient.MyService.ServiceClient cliente = new MyService.ServiceClient();
+            MyService.ServiceClient cliente = new MyService.ServiceClient();
             string hola = cliente.GetData(i);
+            MyService.ServiceClient cliente2 = new MyService.ServiceClient();
+            string mistring = cliente2.GetData(2);
+            Console.Write(mistring);
             Console.Write(hola);
         }
     }
