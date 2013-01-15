@@ -9,17 +9,17 @@ namespace BaseDatos
 {
     public static class BaseDatosUsuario
     {
-	    
+        static NpgsqlConnection conexion = new NpgsqlConnection("Server = 127.0.0.1 ; Port=5432; User Id = postgres; Password = Gerard66. ; Database =Agromarket");
+
+            
         public static void abrirConexion()
         {
-           NpgsqlConnection conexion = new NpgsqlConnection( "Server = 127.0.0.1 ; Port=5432; User Id = postgres; Password = Gerard66. ; Database =Agromarket");
-
-            if(conexion.State == System.Data.ConnectionState.Closed)
+           if(conexion.State == System.Data.ConnectionState.Closed)
                 conexion.Open();
         }
         public static void cerrarConexion()
         {
-           NpgsqlConnection conexion = new NpgsqlConnection( "Server = 127.0.0.1 ; Port=5432; User Id = postgres; Password = Gerard66. ; Database =Agromarket");
+           
 
             if (conexion.State == System.Data.ConnectionState.Open)
                 conexion.Close();
@@ -28,18 +28,15 @@ namespace BaseDatos
         {
             try
             {
-               NpgsqlConnection conexion = new NpgsqlConnection( "Server = 127.0.0.1 ; Port=5432; User Id = postgres; Password = Gerard66. ; Database =Agromarket");
-
                 ModeloUsuario usuario = new ModeloUsuario();
-                NpgsqlCommand cmd = new NpgsqlCommand("Select * from Usuario where NombreUsuario = @nombre", conexion);
+                NpgsqlCommand cmd = new NpgsqlCommand("Select * from usuario where nombreusuario = @nombre", conexion);
                 cmd.Parameters.Add("nombre", nombreUsuario);
-                if (conexion.State == System.Data.ConnectionState.Closed)
-                    conexion.Open();
+                abrirConexion();
                 NpgsqlDataReader reader = cmd.ExecuteReader();
-                if (reader.HasRows)
+                if(reader.Read())
                 {
-                    usuario.nombreUsuario = reader["NombreUsuario"].ToString();
-                    usuario.contrasena = reader["Contrasena"].ToString();
+                    usuario.nombreUsuario = reader["nombreusuario"].ToString();
+                    usuario.contrasena = reader["contrasena"].ToString();
                 }
                 cerrarConexion();
                 return usuario;
