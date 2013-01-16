@@ -11,6 +11,8 @@ namespace ModeloWCF
     public class ModeloOferta
     {
         [DataMember]
+        public double idOferta { get; set; }
+        [DataMember]
         public ModeloProducto producto { get; set; }
         [DataMember]
         public ModeloUsuario usuarioSubasta { get; set; }

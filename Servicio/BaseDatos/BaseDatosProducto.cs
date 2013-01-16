@@ -23,6 +23,7 @@ namespace BaseDatos
                     while (reader.Read())
                     {
                         ModeloProducto producto = new ModeloProducto();
+                        producto.idProducto = double.Parse(reader["idproducto"].ToString());
                         producto.cantidad = float.Parse(reader["cantidad"].ToString());
                         producto.detalle = reader["detalle"].ToString();
                         producto.fechaOferta = DateTime.Parse(reader["fechaoferta"].ToString());
@@ -42,6 +43,58 @@ namespace BaseDatos
                 throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
+        public static float ObtenerCantidadProducto(double idProducto)
+        {
+            try
+            {
+                float cantidad = -1;
+                NpgsqlCommand cmd = new NpgsqlCommand("Select cantidad from producto where idproducto=@idproducto",Conexion.conexion);
+                cmd.Parameters.Add("idproducto",idProducto);
+                Conexion.abrirConexion();
+                NpgsqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    cantidad = float.Parse(reader["cantidad"].ToString());
+                }
+                return cantidad;
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+        public static ModeloProducto ObtenerProducto(double idProducto)
+        {
+            try
+            {
+                ModeloProducto producto = null;
+                NpgsqlCommand cmd = new NpgsqlCommand("Select * from producto where idproducto=@idproducto", Conexion.conexion);
+                cmd.Parameters.Add("idproducto", idProducto);
+                Conexion.abrirConexion();
+                NpgsqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    producto = new ModeloProducto();
+                    producto.cantidad = float.Parse(reader["cantidad"].ToString());
+                    producto.detalle = reader["detalle"].ToString();
+                    producto.fechaOferta = DateTime.Parse(reader["fechaoferta"].ToString());
+                    producto.fechaVencimientoOferta = DateTime.Parse(reader["fechavencimientooferta"].ToString());
+                    producto.idProducto = double.Parse(reader["idproducto"].ToString());
+                    producto.nombre = reader["nombre"].ToString();
+                    producto.unidad = reader["unidad"].ToString();
+                    producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
+                }
+                return producto;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public static List<ModeloProducto> ObtenerProductosConElNombre(string nombre)
         {
             try
@@ -57,6 +110,7 @@ namespace BaseDatos
                     while (reader.Read())
                     {
                         ModeloProducto producto = new ModeloProducto();
+                        producto.idProducto = double.Parse(reader["idproducto"].ToString());
                         producto.cantidad = float.Parse(reader["cantidad"].ToString());
                         producto.detalle = reader["detalle"].ToString();
                         producto.fechaOferta = DateTime.Parse(reader["fechaoferta"].ToString());
@@ -73,7 +127,7 @@ namespace BaseDatos
             catch (Exception)
             {
                 
-                throw;
+                throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
     }
