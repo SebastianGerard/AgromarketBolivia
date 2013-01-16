@@ -28,5 +28,21 @@ namespace ServicioWCF
 	        }
            
         }
+
+        public List<ModeloProducto> ObtenerProductosConElNombre(string nombre)
+        {
+            try
+            {
+                List<ModeloProducto> productos = BaseDatosProducto.ObtenerProductosConElNombre(nombre);
+                if (productos == null)
+                    throw new Exception("No se encontró ningún producto");
+                return productos;
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
     }
 }

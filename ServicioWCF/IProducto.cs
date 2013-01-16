@@ -13,5 +13,8 @@ namespace ServicioWCF
     {
         [OperationContract]
         List<ModeloProducto> ObtenerTodosProductos();
+        [OperationContract]
+        List<ModeloProducto> ObtenerProductosConElNombre(string nombre);
+
     }
 }

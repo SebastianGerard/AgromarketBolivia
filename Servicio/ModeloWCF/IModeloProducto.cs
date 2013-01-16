@@ -21,7 +21,7 @@ namespace ModeloWCF
         [DataMember]
         public DateTime fechaVencimientoOferta { get; set; }
         [DataMember]
-        public ModeloUsuario NombreUsuarioDueno { get; set; }
+        public ModeloUsuario Usuario { get; set; }
         [DataMember]
         public string unidad { get; set; }
     }
