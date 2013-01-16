@@ -23,7 +23,7 @@ namespace ClienteASP
                 if (entro)
                 {
                     LabelError.Text = "OK, está adentro y deberia dirigirse a otra página :)";
-
+                    
                 }
                 else
                 {

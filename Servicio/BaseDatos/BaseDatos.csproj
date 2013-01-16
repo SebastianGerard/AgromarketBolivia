@@ -46,14 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDatosProducto.cs" />
     <Compile Include="BaseDatosUsuario.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Modelo\Modelo.csproj">
-      <Project>{E8DD1917-5B22-4249-8DCE-9FC70E2C2FA6}</Project>
-      <Name>Modelo</Name>
+    <ProjectReference Include="..\ModeloWCF\ModeloWCF.csproj">
+      <Project>{3A8258AE-491A-4F52-9201-12278D21A668}</Project>
+      <Name>ModeloWCF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

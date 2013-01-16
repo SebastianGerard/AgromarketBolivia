@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Modelo;
+using ModeloWCF;
 using Npgsql;
 using Mono.Security;
 namespace BaseDatos
@@ -23,6 +23,10 @@ namespace BaseDatos
                 {
                     usuario.nombreUsuario = reader["nombreusuario"].ToString();
                     usuario.contrasena = reader["contrasena"].ToString();
+                    usuario.apellido = reader["apellido"].ToString();
+                    usuario.direccion = reader["direccion"].ToString();
+                    usuario.nivelAcceso = reader["nivelacceso"].ToString();
+                    usuario.nombre = reader["nombre"].ToString();
                 }
                 Conexion.cerrarConexion();
                 return usuario;
@@ -30,9 +34,10 @@ namespace BaseDatos
             catch (Exception ex)
             {
                 
-                throw ex;
+                throw new Exception("Hubo un error con la base de datos");
             }
             
         }
+
     }
 }
