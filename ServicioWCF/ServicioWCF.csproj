@@ -91,6 +91,10 @@
       <Project>{3A8258AE-491A-4F52-9201-12278D21A668}</Project>
       <Name>ModeloWCF</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Servicio\Utilidad\Utilidad.csproj">
+      <Project>{A3927E35-20DA-468D-8302-F7685A533CA2}</Project>
+      <Name>Utilidad</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

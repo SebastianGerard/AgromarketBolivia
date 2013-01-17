@@ -18,5 +18,7 @@ namespace ServicioWCF
         List<ModeloOferta> VerMisOfertas(string nombreUsuario);
         [OperationContract]
         List<ModeloOferta> VerOfertasDelProducto(double idProducto);
+        [OperationContract]
+        void EscogerEstasOfertas(List<ModeloOferta> ofertasGanadoras,List<ModeloOferta> ofertasPerdedoras);
     }
 }

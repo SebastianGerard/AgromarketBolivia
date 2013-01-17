@@ -23,5 +23,7 @@ namespace ModeloWCF
         public string direccion { get; set; }
         [DataMember]
         public string nivelAcceso { get; set; }
+        [DataMember]
+        public string email { get; set; }
     }
 }

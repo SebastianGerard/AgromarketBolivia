@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using BaseDatos;
 using ModeloWCF;
+using Utilidades;
 
 namespace ServicioWCF
 {
@@ -66,6 +67,43 @@ namespace ServicioWCF
             {
                 throw ex;
             }
+        }
+        private void InformarGanadores(List<ModeloOferta> ofertas)
+        {
+            foreach (ModeloOferta oferta in ofertas)
+            {
+                CorreoElectronico.enviar("agro.market.bolivia@gmail.com", oferta.usuarioSubasta.email, "GANADOR OFERTA AGROMARKET", "Agromarket Bolivia", "agromarketbolivia", "Le comunicamos que usted ganó la oferta que hizo al producto " + oferta.producto.nombre + " en fecha: " + oferta.fecha + ". Felicidades!!", 587, "smtp.gmail.com");
+            }
+        }
+        public void InformarPerdedores(List<ModeloOferta> ofertas)
+        {
+            foreach (ModeloOferta oferta in ofertas)
+            {
+                CorreoElectronico.enviar("agro.market.bolivia@gmail.com",oferta.usuarioSubasta.email,"OFERTA PERDIDA AGROMARKET","Agromarket Bolivia","agromarketbolivia","Le comunicamos que usted perdió la oferta que hizo al producto "+oferta.producto.nombre+" en fecha: "+oferta.fecha+". Siga intentando, mejor suerte para la próxima.",587,"smtp.gmail.com");
+            }
+            
+        }
+        public void EscogerEstasOfertas(List<ModeloOferta> ofertasGanadoras,List<ModeloOferta> ofertasPerdedoras)
+        {
+            float totalCantidad = 0;
+            if (ofertasGanadoras == null)
+                throw new Exception("Debe escoger por lo menos una oferta");
+
+            foreach (ModeloOferta oferta in ofertasGanadoras)
+            {
+                totalCantidad += oferta.cantidad;
+            }
+            if (totalCantidad > ofertasGanadoras[0].producto.cantidad)
+                throw new Exception("Imposible escoger estas ofertas, ya que la cantidad del producto es insuficiente para satisfacer la demanda");
+
+            InformarGanadores(ofertasGanadoras);
+            InformarPerdedores(ofertasPerdedoras);
+            InformarAlProductor(ofertasGanadoras[0].producto.Usuario,totalCantidad);
+        }
+
+        private void InformarAlProductor(ModeloUsuario usuario,float totalUnidades)
+        {
+            CorreoElectronico.enviar("agro.market.bolivia@gmail.com", usuario.email, "SU PRODUCTO TIENE DUEÑO", "Agromarket Bolivia", "agromarketbolivia", "Su producto fue vendido exitosamente. Total de unidades vendidas: " + totalUnidades + " comuníquese con nosotros para mayor información.", 587, "smtp.gmail.com");
         }
     }
 }

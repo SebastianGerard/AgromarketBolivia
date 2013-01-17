@@ -27,6 +27,7 @@ namespace BaseDatos
                     usuario.direccion = reader["direccion"].ToString();
                     usuario.nivelAcceso = reader["nivelacceso"].ToString();
                     usuario.nombre = reader["nombre"].ToString();
+                    usuario.email = reader["email"].ToString();
                 }
                 Conexion.cerrarConexion();
                 return usuario;
@@ -59,6 +60,7 @@ namespace BaseDatos
                         usuario.nombreUsuario = reader["nombreusuario"].ToString();
                         usuario.contrasena = reader["contrasena"].ToString();
                         usuario.nivelAcceso = reader["nivelacceso"].ToString();
+                        usuario.email = reader["email"].ToString();
                         usuarios.Add(usuario);
                     }
                 }
@@ -92,6 +94,7 @@ namespace BaseDatos
                         usuario.nombreUsuario = reader["nombreusuario"].ToString();
                         usuario.contrasena = reader["contrasena"].ToString();
                         usuario.nivelAcceso = reader["nivelacceso"].ToString();
+                        usuario.email = reader["email"].ToString();
                         usuarios.Add(usuario);
                     }
                 }
@@ -125,6 +128,7 @@ namespace BaseDatos
                         usuario.nombreUsuario = reader["nombreusuario"].ToString();
                         usuario.contrasena = reader["contrasena"].ToString();
                         usuario.nivelAcceso = reader["nivelacceso"].ToString();
+                        usuario.email = reader["email"].ToString();
                         usuarios.Add(usuario);
                     }
                 }
