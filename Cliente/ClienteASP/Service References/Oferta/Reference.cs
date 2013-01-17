@@ -8,10 +8,183 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClienteASP.Producto {
+namespace ClienteASP.Oferta {
     using System.Runtime.Serialization;
     using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ModeloOferta", Namespace="http://schemas.datacontract.org/2004/07/ModeloWCF")]
+    [System.SerializableAttribute()]
+    public partial class ModeloOferta : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float cantidadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime fechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double idOfertaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float precioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClienteASP.Oferta.ModeloProducto productoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tipoMonedaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool tomadaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ClienteASP.Oferta.ModeloUsuario usuarioSubastaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool vencidaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float cantidad {
+            get {
+                return this.cantidadField;
+            }
+            set {
+                if ((this.cantidadField.Equals(value) != true)) {
+                    this.cantidadField = value;
+                    this.RaisePropertyChanged("cantidad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime fecha {
+            get {
+                return this.fechaField;
+            }
+            set {
+                if ((this.fechaField.Equals(value) != true)) {
+                    this.fechaField = value;
+                    this.RaisePropertyChanged("fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double idOferta {
+            get {
+                return this.idOfertaField;
+            }
+            set {
+                if ((this.idOfertaField.Equals(value) != true)) {
+                    this.idOfertaField = value;
+                    this.RaisePropertyChanged("idOferta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float precio {
+            get {
+                return this.precioField;
+            }
+            set {
+                if ((this.precioField.Equals(value) != true)) {
+                    this.precioField = value;
+                    this.RaisePropertyChanged("precio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClienteASP.Oferta.ModeloProducto producto {
+            get {
+                return this.productoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.productoField, value) != true)) {
+                    this.productoField = value;
+                    this.RaisePropertyChanged("producto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tipoMoneda {
+            get {
+                return this.tipoMonedaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tipoMonedaField, value) != true)) {
+                    this.tipoMonedaField = value;
+                    this.RaisePropertyChanged("tipoMoneda");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool tomada {
+            get {
+                return this.tomadaField;
+            }
+            set {
+                if ((this.tomadaField.Equals(value) != true)) {
+                    this.tomadaField = value;
+                    this.RaisePropertyChanged("tomada");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ClienteASP.Oferta.ModeloUsuario usuarioSubasta {
+            get {
+                return this.usuarioSubastaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.usuarioSubastaField, value) != true)) {
+                    this.usuarioSubastaField = value;
+                    this.RaisePropertyChanged("usuarioSubasta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool vencida {
+            get {
+                return this.vencidaField;
+            }
+            set {
+                if ((this.vencidaField.Equals(value) != true)) {
+                    this.vencidaField = value;
+                    this.RaisePropertyChanged("vencida");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -23,7 +196,7 @@ namespace ClienteASP.Producto {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ClienteASP.Producto.ModeloUsuario UsuarioField;
+        private ClienteASP.Oferta.ModeloUsuario UsuarioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private float cantidadField;
@@ -57,7 +230,7 @@ namespace ClienteASP.Producto {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ClienteASP.Producto.ModeloUsuario Usuario {
+        public ClienteASP.Oferta.ModeloUsuario Usuario {
             get {
                 return this.UsuarioField;
             }
@@ -296,49 +469,49 @@ namespace ClienteASP.Producto {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Producto.IProducto")]
-    public interface IProducto {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Oferta.IOferta")]
+    public interface IOferta {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/ObtenerTodosProductos", ReplyAction="http://tempuri.org/IProducto/ObtenerTodosProductosResponse")]
-        ClienteASP.Producto.ModeloProducto[] ObtenerTodosProductos();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOferta/OfrecerOferta", ReplyAction="http://tempuri.org/IOferta/OfrecerOfertaResponse")]
+        void OfrecerOferta(float cantidad, float precio, double idproducto, string nombreUsuario, string tipoMoneda);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/ObtenerProductosConElNombre", ReplyAction="http://tempuri.org/IProducto/ObtenerProductosConElNombreResponse")]
-        ClienteASP.Producto.ModeloProducto[] ObtenerProductosConElNombre(string nombre);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOferta/VerMisOfertas", ReplyAction="http://tempuri.org/IOferta/VerMisOfertasResponse")]
+        ClienteASP.Oferta.ModeloOferta[] VerMisOfertas(string nombreUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IProductoChannel : ClienteASP.Producto.IProducto, System.ServiceModel.IClientChannel {
+    public interface IOfertaChannel : ClienteASP.Oferta.IOferta, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ProductoClient : System.ServiceModel.ClientBase<ClienteASP.Producto.IProducto>, ClienteASP.Producto.IProducto {
+    public partial class OfertaClient : System.ServiceModel.ClientBase<ClienteASP.Oferta.IOferta>, ClienteASP.Oferta.IOferta {
         
-        public ProductoClient() {
+        public OfertaClient() {
         }
         
-        public ProductoClient(string endpointConfigurationName) : 
+        public OfertaClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ProductoClient(string endpointConfigurationName, string remoteAddress) : 
+        public OfertaClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ProductoClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public OfertaClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ProductoClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public OfertaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public ClienteASP.Producto.ModeloProducto[] ObtenerTodosProductos() {
-            return base.Channel.ObtenerTodosProductos();
+        public void OfrecerOferta(float cantidad, float precio, double idproducto, string nombreUsuario, string tipoMoneda) {
+            base.Channel.OfrecerOferta(cantidad, precio, idproducto, nombreUsuario, tipoMoneda);
         }
         
-        public ClienteASP.Producto.ModeloProducto[] ObtenerProductosConElNombre(string nombre) {
-            return base.Channel.ObtenerProductosConElNombre(nombre);
+        public ClienteASP.Oferta.ModeloOferta[] VerMisOfertas(string nombreUsuario) {
+            return base.Channel.VerMisOfertas(nombreUsuario);
         }
     }
 }

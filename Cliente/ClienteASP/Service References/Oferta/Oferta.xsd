@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ModeloWCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ModeloWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfModeloProducto">
+  <xs:complexType name="ArrayOfModeloOferta">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModeloProducto" nillable="true" type="tns:ModeloProducto" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModeloOferta" nillable="true" type="tns:ModeloOferta" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfModeloProducto" nillable="true" type="tns:ArrayOfModeloProducto" />
+  <xs:element name="ArrayOfModeloOferta" nillable="true" type="tns:ArrayOfModeloOferta" />
+  <xs:complexType name="ModeloOferta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cantidad" type="xs:float" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="idOferta" type="xs:double" />
+      <xs:element minOccurs="0" name="precio" type="xs:float" />
+      <xs:element minOccurs="0" name="producto" nillable="true" type="tns:ModeloProducto" />
+      <xs:element minOccurs="0" name="tipoMoneda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tomada" type="xs:boolean" />
+      <xs:element minOccurs="0" name="usuarioSubasta" nillable="true" type="tns:ModeloUsuario" />
+      <xs:element minOccurs="0" name="vencida" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModeloOferta" nillable="true" type="tns:ModeloOferta" />
   <xs:complexType name="ModeloProducto">
     <xs:sequence>
       <xs:element minOccurs="0" name="Usuario" nillable="true" type="tns:ModeloUsuario" />

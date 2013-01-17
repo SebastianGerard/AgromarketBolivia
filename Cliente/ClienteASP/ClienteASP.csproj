@@ -58,6 +58,19 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <None Include="Service References\Oferta\ClienteASP.Oferta.ModeloOferta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Oferta\Oferta.wsdl" />
+    <None Include="Service References\Oferta\Oferta.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Oferta\Oferta1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Oferta\Oferta2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\Producto\ClienteASP.Producto.ModeloProducto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -81,6 +94,12 @@
     <None Include="Service References\Producto\configuration91.svcinfo" />
     <None Include="Service References\Producto\configuration.svcinfo" />
     <None Include="Service References\Producto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Oferta\configuration91.svcinfo" />
+    <None Include="Service References\Oferta\configuration.svcinfo" />
+    <None Include="Service References\Oferta\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -152,6 +171,11 @@
       <DependentUpon>IngresarLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Oferta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Producto\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,6 +205,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Oferta\" />
     <WCFMetadataStorage Include="Service References\Producto\" />
     <WCFMetadataStorage Include="Service References\Usuario\" />
   </ItemGroup>

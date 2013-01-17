@@ -13,4 +13,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ObtenerProductosConElNombre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProductosConElNombreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ModeloWCF" minOccurs="0" name="ObtenerProductosConElNombreResult" nillable="true" type="q2:ArrayOfModeloProducto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
