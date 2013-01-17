@@ -79,9 +79,9 @@ namespace BaseDatos
                 }
                 return ofertas;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
         public static List<ModeloOferta> VerOfertasDelProducto(double idProducto)
@@ -112,10 +112,9 @@ namespace BaseDatos
                 }
                 return ofertas;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                
-                throw ex;
+                throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
     }

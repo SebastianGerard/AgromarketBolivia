@@ -57,9 +57,9 @@ namespace ServicioWCF
         {
             try
             {
-                 List<ModeloOferta> ofertas = BaseDatosOferta.VerOfertasDelProducto(idProducto);
+                List<ModeloOferta> ofertas = BaseDatosOferta.VerOfertasDelProducto(idProducto);
                 if (ofertas == null)
-                    throw new Exception("Ud. no tiene ofertas vigentes");
+                    throw new Exception("No se tiene ofertas para el producto especificado");
                 return ofertas;
             }
             catch (Exception ex)
