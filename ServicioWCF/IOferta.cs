@@ -16,6 +16,7 @@ namespace ServicioWCF
         void OfrecerOferta(float cantidad, float precio, double idproducto, string nombreUsuario, string tipoMoneda);
         [OperationContract]
         List<ModeloOferta> VerMisOfertas(string nombreUsuario);
-
+        [OperationContract]
+        List<ModeloOferta> VerOfertasDelProducto(double idProducto);
     }
 }

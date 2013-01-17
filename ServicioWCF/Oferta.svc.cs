@@ -53,5 +53,19 @@ namespace ServicioWCF
                 throw ex;
             }
         }
+        public List<ModeloOferta> VerOfertasDelProducto(double idProducto)
+        {
+            try
+            {
+                 List<ModeloOferta> ofertas = BaseDatosOferta.VerOfertasDelProducto(idProducto);
+                if (ofertas == null)
+                    throw new Exception("Ud. no tiene ofertas vigentes");
+                return ofertas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

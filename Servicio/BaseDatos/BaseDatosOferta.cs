@@ -84,5 +84,39 @@ namespace BaseDatos
                 throw ex;
             }
         }
+        public static List<ModeloOferta> VerOfertasDelProducto(double idProducto)
+        {
+            try
+            {
+                List<ModeloOferta> ofertas = null;
+                NpgsqlCommand cmd = new NpgsqlCommand("Select * from oferta where idproducto = @idproducto",Conexion.conexion);
+                cmd.Parameters.Add("idproducto",idProducto);
+                Conexion.abrirConexion();
+                NpgsqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    ofertas = new List<ModeloOferta>();
+                    while (reader.Read())
+                    {
+                        ModeloOferta oferta = new ModeloOferta();
+                        oferta.cantidad = float.Parse(reader["cantidad"].ToString());
+                        oferta.fecha = DateTime.Parse(reader["fecha"].ToString());
+                        oferta.idOferta = double.Parse(reader["idoferta"].ToString());
+                        oferta.precio = float.Parse(reader["precio"].ToString());
+                        oferta.producto = BaseDatosProducto.ObtenerProducto(double.Parse(reader["idproducto"].ToString()));
+                        oferta.tipoMoneda = reader["tipomoneda"].ToString();
+                        oferta.usuarioSubasta = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariosubasta"].ToString());
+                        oferta.vencida = (bool)reader["vencida"];
+                        ofertas.Add(oferta);
+                    }
+                }
+                return ofertas;
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
     }
 }
