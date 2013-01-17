@@ -11,5 +11,10 @@ namespace ServicioWCF
     {
         [OperationContract]
         bool Login(string nombreUsuario, string contrasena);
+        List<ModeloUsuario> ObtenerTodosUsuarios();
+        [OperationContract]
+        List<ModeloUsuario> ObtenerUsuariosConElNombre(string nombre);
+        [OperationContract]
+        List<ModeloUsuario> ObtenerUsuariosConElApellido(string apellido);
     }
 }
