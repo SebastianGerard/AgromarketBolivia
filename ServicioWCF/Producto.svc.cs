@@ -44,5 +44,18 @@ namespace ServicioWCF
                 throw ex;
             }
         }
+        public bool registraproducto(string idproducto, string nombre, string cantidad, string unidad, string fechaoferta, string fechavencimientooferta, string detalle, string nombreusuariodueno)
+        {
+            try
+            {
+                return BaseDatosProducto.registrarProducto(idproducto, nombre, cantidad, unidad, fechaoferta, fechavencimientooferta, detalle, nombreusuariodueno);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //public bool eliminarproducto(string idproducto){}
     }
 }

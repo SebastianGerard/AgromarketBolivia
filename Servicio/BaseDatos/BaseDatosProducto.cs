@@ -130,5 +130,37 @@ namespace BaseDatos
                 throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
+        public static bool registrarProducto(string idproducto, string nombre, string cantidad, string unidad, string fechaoferta, string fechavencimientooferta, string detalle, string nombreusuariodueno)
+        {
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand("Insert into producto values(@idproducto, @nombre, @cantidad, @unidad, @fechaoferta, @fechavencimientooferta, @detalle, @nombreusuariodueno)", Conexion.conexion);
+                cmd.Parameters.Add("idproducto", idproducto);
+                cmd.Parameters.Add("nombre", nombre);
+                cmd.Parameters.Add("cantidad", cantidad);
+                cmd.Parameters.Add("unidad", unidad);
+                cmd.Parameters.Add("fechaoferta", fechaoferta);
+                cmd.Parameters.Add("fechavencimientooferta", fechavencimientooferta);
+                cmd.Parameters.Add("detalle", detalle);
+                cmd.Parameters.Add("nombreusuariodueno", nombreusuariodueno);
+
+                Conexion.abrirConexion();
+                if (cmd.ExecuteNonQuery() != -1)
+                {
+                    Conexion.cerrarConexion();
+                    return true;
+                }
+                else
+                {
+                    Conexion.cerrarConexion();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
+            }
+        }
+        //public static bool eliminarproducto()
     }
 }
