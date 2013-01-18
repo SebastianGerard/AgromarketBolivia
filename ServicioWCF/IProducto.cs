@@ -16,7 +16,10 @@ namespace ServicioWCF
         [OperationContract]
         List<ModeloProducto> ObtenerProductosConElNombre(string nombre);
         [OperationContract]
-        bool registrarproducto(string idproducto, string nombre, string cantidad, string unidad, string detalle, string fechaoferta, string fechavencimientooferta, string nombreusuariodueno);
+        bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno);
+        [OperationContract]
         bool eliminarproducto(string idproducto);
+        [OperationContract]
+        List<ModeloProducto> ObtenerProductosNoEvaluados();
     }
 }

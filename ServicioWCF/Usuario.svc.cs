@@ -92,7 +92,7 @@ namespace ServicioWCF
         public bool registrarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email)
         {
             return true;
-        }
+        }//puse esto para que compile el proyecto, lo retiras cuando implementes el tuyo.
 
     }
 }

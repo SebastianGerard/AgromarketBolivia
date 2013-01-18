@@ -117,5 +117,37 @@ namespace BaseDatos
                 throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
+        public static void CambiarOfertaATomada(ModeloOferta oferta)
+        {
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand("Update oferta set tomada='true' where idoferta=@idoferta", Conexion.conexion);
+                cmd.Parameters.Add("idoferta",oferta.idOferta);
+                Conexion.abrirConexion();
+                cmd.ExecuteNonQuery();
+                Conexion.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+        public static void CambiarOfertaAVencida(ModeloOferta oferta)
+        {
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand("Update oferta set vencida='true' where idoferta=@idoferta");
+                cmd.Parameters.Add("idoferta",oferta.idOferta);
+                Conexion.abrirConexion();
+                cmd.ExecuteNonQuery();
+                Conexion.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+        }
     }
 }

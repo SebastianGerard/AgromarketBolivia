@@ -26,5 +26,7 @@ namespace ModeloWCF
         public ModeloUsuario Usuario { get; set; }
         [DataMember]
         public string unidad { get; set; }
+        [DataMember]
+        public bool evaluado { get; set; }
     }
 }

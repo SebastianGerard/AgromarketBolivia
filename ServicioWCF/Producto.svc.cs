@@ -40,15 +40,31 @@ namespace ServicioWCF
             }
             catch (Exception ex)
             {
-                
                 throw ex;
             }
         }
-        public bool registraproducto(string idproducto, string nombre, string cantidad, string unidad, string fechaoferta, string fechavencimientooferta, string detalle, string nombreusuariodueno)
+        public bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno)
         {
             try
             {
-                return BaseDatosProducto.registrarProducto(idproducto, nombre, cantidad, unidad, fechaoferta, fechavencimientooferta, detalle, nombreusuariodueno);
+                //FALTAN VALIDACIONES. EJ:
+                if (nombre == null)
+                    throw new Exception("El producto tiene que tener un nombre que refleje lo que quiere vender");
+                float outCantidad = 0;
+                if (!float.TryParse(cantidad, out outCantidad))
+                    throw new Exception("Formato de 'cantidad' no válido");
+
+                if (outCantidad <= 0)
+                    throw new Exception("La cantidad tiene que ser mayor que 0");
+
+                DateTime date = new DateTime();
+                if (!DateTime.TryParse(fechavencimientooferta, out date))
+                    throw new Exception("Formato de 'Fecha de vencimiento' no válido");
+
+                if (date < DateTime.Now.Date)
+                    throw new Exception("Fecha de vencimiento inválida, introduzca una fecha posterior a hoy");
+                
+                return BaseDatosProducto.registrarProducto(nombre, cantidad, unidad, fechavencimientooferta, detalle, nombreusuariodueno);
 
             }
             catch (Exception ex)
@@ -57,5 +73,25 @@ namespace ServicioWCF
             }
         }
         //public bool eliminarproducto(string idproducto){}
+        public bool eliminarproducto(string idproducto)
+        {
+            return true;
+        }//Puse esto para que me compile
+
+        public List<ModeloProducto> ObtenerProductosNoEvaluados()
+        {
+            try
+            {
+                List<ModeloProducto> productos = BaseDatosProducto.ProductosNoEvaluados();
+                if (productos == null)
+                    throw new Exception("Todos los productos fueron evaluados");
+                return productos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

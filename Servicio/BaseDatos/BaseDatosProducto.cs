@@ -14,7 +14,8 @@ namespace BaseDatos
             try
             {
                 List<ModeloProducto> productos = null;
-                NpgsqlCommand cmd = new NpgsqlCommand("Select * from producto",Conexion.conexion);
+                NpgsqlCommand cmd = new NpgsqlCommand("Select * from producto where fechavencimientooferta>=@date and evaluado='false'",Conexion.conexion);
+                cmd.Parameters.Add("date",DateTime.Now.Date);
                 Conexion.abrirConexion();
                 NpgsqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -31,6 +32,7 @@ namespace BaseDatos
                         producto.nombre = reader["nombre"].ToString();
                         producto.unidad = reader["unidad"].ToString();
                         producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
+                        producto.evaluado = (bool)reader["evaluado"];
                         productos.Add(producto);
                     }
                 }
@@ -86,6 +88,7 @@ namespace BaseDatos
                     producto.nombre = reader["nombre"].ToString();
                     producto.unidad = reader["unidad"].ToString();
                     producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
+                    producto.evaluado = (bool)reader["evaluado"];
                 }
                 return producto;
             }
@@ -100,7 +103,8 @@ namespace BaseDatos
             try
             {
                 List<ModeloProducto> productos = new List<ModeloProducto>();
-                NpgsqlCommand cmd = new NpgsqlCommand("Select * from producto where nombre like '%"+nombre+"%'",Conexion.conexion);
+                NpgsqlCommand cmd = new NpgsqlCommand("Select * from producto where nombre like '%"+nombre+"%' and fechavencimientooferta>=@date and evaluado='false'",Conexion.conexion);
+                cmd.Parameters.Add("date",DateTime.Now.Date);
                 Conexion.abrirConexion();
                 NpgsqlDataReader reader = cmd.ExecuteReader();
 
@@ -118,6 +122,7 @@ namespace BaseDatos
                         producto.nombre = reader["nombre"].ToString();
                         producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
                         producto.unidad = reader["unidad"].ToString();
+                        producto.evaluado = (bool)reader["evaluado"];
                         productos.Add(producto);
                     }
                 }
@@ -130,20 +135,20 @@ namespace BaseDatos
                 throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
-        public static bool registrarProducto(string idproducto, string nombre, string cantidad, string unidad, string fechaoferta, string fechavencimientooferta, string detalle, string nombreusuariodueno)
+        public static bool registrarProducto(string nombre, string cantidad, string unidad, string fechavencimientooferta, string detalle, string nombreusuariodueno)
         {
             try
             {
-                NpgsqlCommand cmd = new NpgsqlCommand("Insert into producto values(@idproducto, @nombre, @cantidad, @unidad, @fechaoferta, @fechavencimientooferta, @detalle, @nombreusuariodueno)", Conexion.conexion);
-                cmd.Parameters.Add("idproducto", idproducto);
+                NpgsqlCommand cmd = new NpgsqlCommand("Insert into producto (nombre,detalle,cantidad,fechaoferta,fechavencimientooferta,nombreusuariodueno,unidad,evaluado) values(@nombre, @detalle,@cantidad,  @fechaoferta, @fechavencimientooferta, @nombreusuariodueno,@unidad,'false')", Conexion.conexion);
+                //NO SE INSERTA IDPRODUCTO, PORQ ES AUTOGENERADO DE TIPO'SERIAL'
                 cmd.Parameters.Add("nombre", nombre);
                 cmd.Parameters.Add("cantidad", cantidad);
                 cmd.Parameters.Add("unidad", unidad);
-                cmd.Parameters.Add("fechaoferta", fechaoferta);
+                cmd.Parameters.Add("fechaoferta", "19/01/2013"); // Fecha de oferta siempre es la de hoy
                 cmd.Parameters.Add("fechavencimientooferta", fechavencimientooferta);
                 cmd.Parameters.Add("detalle", detalle);
                 cmd.Parameters.Add("nombreusuariodueno", nombreusuariodueno);
-
+                
                 Conexion.abrirConexion();
                 if (cmd.ExecuteNonQuery() != -1)
                 {
@@ -162,5 +167,39 @@ namespace BaseDatos
             }
         }
         //public static bool eliminarproducto()
+        public static List<ModeloProducto> ProductosNoEvaluados()
+        {
+            try
+            {
+                List<ModeloProducto> productos = null;
+                NpgsqlCommand cmd = new NpgsqlCommand("Select * from producto where evaluado='false'", Conexion.conexion);
+                Conexion.abrirConexion();
+                NpgsqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    productos = new List<ModeloProducto>();
+                    while (reader.Read())
+                    {
+                        ModeloProducto producto = new ModeloProducto();
+                        producto.cantidad = float.Parse(reader["cantidad"].ToString());
+                        producto.detalle = reader["cantidad"].ToString();
+                        producto.evaluado = (bool)reader["evaluado"];
+                        producto.fechaOferta = DateTime.Parse(reader["fechaoferta"].ToString());
+                        producto.fechaVencimientoOferta = DateTime.Parse(reader["fechavencimientooferta"].ToString());
+                        producto.idProducto = Double.Parse(reader["idproducto"].ToString());
+                        producto.unidad = reader["unidad"].ToString();
+                        producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
+                        productos.Add(producto);
+                    }
+                }
+                Conexion.cerrarConexion();
+                return productos;
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
     }
 }

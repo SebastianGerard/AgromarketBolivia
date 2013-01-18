@@ -73,6 +73,7 @@ namespace ServicioWCF
             foreach (ModeloOferta oferta in ofertas)
             {
                 CorreoElectronico.enviar("agro.market.bolivia@gmail.com", oferta.usuarioSubasta.email, "GANADOR OFERTA AGROMARKET", "Agromarket Bolivia", "agromarketbolivia", "Le comunicamos que usted ganó la oferta que hizo al producto " + oferta.producto.nombre + " en fecha: " + oferta.fecha + ". Felicidades!!", 587, "smtp.gmail.com");
+                BaseDatosOferta.CambiarOfertaATomada(oferta);
             }
         }
         public void InformarPerdedores(List<ModeloOferta> ofertas)
