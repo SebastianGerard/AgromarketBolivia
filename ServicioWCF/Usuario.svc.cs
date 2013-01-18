@@ -75,6 +75,20 @@ namespace ServicioWCF
                 throw ex;
             }
         }
+
+        public bool insertarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email)
+        {
+            try 
+            {
+                return BaseDatosUsuario.registrarUsuario(nombre,apellido,direccion,nombreusuario,contrasena,nivelacceso,email);
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
 

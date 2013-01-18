@@ -140,7 +140,38 @@ namespace BaseDatos
             {
                 throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
-        }    
+        }
+
+        public static bool registrarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email)
+        {
+            try 
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand("Insert into usuario values(@nombre,@apellido,@direccion,@nombreusuario,@contrasena,@nivelacceso,@email)", Conexion.conexion);
+                cmd.Parameters.Add("nombre", nombre);
+                cmd.Parameters.Add("apellido", apellido);
+                cmd.Parameters.Add("direccion", direccion);
+                cmd.Parameters.Add("nombreusuario", nombreusuario);
+                cmd.Parameters.Add("contrasena", contrasena);
+                cmd.Parameters.Add("nivelacceso", nivelacceso);
+                cmd.Parameters.Add("email", email);
+                Conexion.abrirConexion();
+                if (cmd.ExecuteNonQuery() != -1)
+                {
+                    Conexion.cerrarConexion();
+                    return true;
+                }
+                else
+                {
+                    Conexion.cerrarConexion();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
+            }
+        }
 
     }
 }
