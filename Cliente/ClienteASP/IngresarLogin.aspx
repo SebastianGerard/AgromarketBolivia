@@ -36,6 +36,8 @@
             <td>
                 <asp:Button ID="ButtonIngresar" runat="server" Text="Ingresar" 
                     onclick="ButtonIngresar_Click" />
+                <asp:LinkButton ID="LinkButton1" runat="server" Text = "Registrar" 
+                    onclick="LinkButton1_Click" />
             </td>
             <td>
                 &nbsp;</td>

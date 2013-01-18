@@ -37,5 +37,10 @@ namespace ClienteASP
             }
             
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("~/usuario/RegistrarUsuario.aspx", true);
+        }
     }
 }
