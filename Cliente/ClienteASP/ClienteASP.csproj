@@ -112,6 +112,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="usuario\BuscarUsuario.aspx" />
     <Content Include="usuario\RegistrarUsuario.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -199,6 +200,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="usuario\BuscarUsuario.aspx.cs">
+      <DependentUpon>BuscarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuario\BuscarUsuario.aspx.designer.cs">
+      <DependentUpon>BuscarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="usuario\RegistrarUsuario.aspx.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>

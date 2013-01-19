@@ -11,6 +11,13 @@ namespace ClienteASP.usuario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuario.UsuarioClient usuario = new Usuario.UsuarioClient();
+            GridViewUsuario.DataSource = usuario.ObtenerTodosUsuarios();
+            GridViewUsuario.DataBind();
+        }
+
+        protected void GridViewUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
