@@ -28,6 +28,22 @@ namespace ServicioWCF
             
         }
 
+        public bool buscarUsuarioPorNombreUsuario(string nombreUsuario)
+        {
+            try
+            {
+                //TODO acceso a BaseDatos Consultando si es correcto o no.
+                ModeloUsuario modeloUsuario = BaseDatosUsuario.ObtenerUsuario(nombreUsuario);
+                return (modeloUsuario.nombreUsuario == nombreUsuario);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
         public List<ModeloUsuario> ObtenerTodosUsuarios()
         {
             try
@@ -89,10 +105,7 @@ namespace ServicioWCF
                 throw ex;
             }
         }
-        public bool registrarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email)
-        {
-            return true;
-        }//puse esto para que compile el proyecto, lo retiras cuando implementes el tuyo.
+       
 
     }
 }

@@ -19,7 +19,9 @@ namespace ServicioWCF
         [OperationContract]
         List<ModeloUsuario> ObtenerUsuariosConElApellido(string apellido);
         [OperationContract]
-        bool registrarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email);
+        bool insertarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email);
+        [OperationContract]
+        bool buscarUsuarioPorNombreUsuario(string nombreUsuario);
     
     }
 }

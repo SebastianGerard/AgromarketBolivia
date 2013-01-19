@@ -84,6 +84,9 @@
     <None Include="Service References\Producto\Producto2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\Usuario\ClienteASP.Usuario.ModeloUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Usuario\configuration91.svcinfo" />
     <None Include="Service References\Usuario\configuration.svcinfo" />
     <None Include="Service References\Usuario\Reference.svcmap">
@@ -117,6 +120,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <None Include="Service References\Usuario\Usuario2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">

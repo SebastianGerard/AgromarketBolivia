@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:4367/Usuario.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ModeloWCF" />
   <xs:element name="Login">
     <xs:complexType>
       <xs:sequence>
@@ -12,6 +13,80 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="LoginResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosUsuarios">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosUsuariosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ModeloWCF" minOccurs="0" name="ObtenerTodosUsuariosResult" nillable="true" type="q1:ArrayOfModeloUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerUsuariosConElNombre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerUsuariosConElNombreResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ModeloWCF" minOccurs="0" name="ObtenerUsuariosConElNombreResult" nillable="true" type="q2:ArrayOfModeloUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerUsuariosConElApellido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerUsuariosConElApellidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ModeloWCF" minOccurs="0" name="ObtenerUsuariosConElApellidoResult" nillable="true" type="q3:ArrayOfModeloUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreusuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contrasena" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nivelacceso" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertarUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarUsuarioPorNombreUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarUsuarioPorNombreUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="buscarUsuarioPorNombreUsuarioResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
