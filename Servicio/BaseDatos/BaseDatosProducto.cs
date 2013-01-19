@@ -144,7 +144,7 @@ namespace BaseDatos
                 cmd.Parameters.Add("nombre", nombre);
                 cmd.Parameters.Add("cantidad", cantidad);
                 cmd.Parameters.Add("unidad", unidad);
-                cmd.Parameters.Add("fechaoferta", "19/01/2013"); // Fecha de oferta siempre es la de hoy
+                cmd.Parameters.Add("fechaoferta", DateTime.Now.Date.ToShortDateString()); // Fecha de oferta siempre es la de hoy
                 cmd.Parameters.Add("fechavencimientooferta", fechavencimientooferta);
                 cmd.Parameters.Add("detalle", detalle);
                 cmd.Parameters.Add("nombreusuariodueno", nombreusuariodueno);
@@ -194,6 +194,22 @@ namespace BaseDatos
                 }
                 Conexion.cerrarConexion();
                 return productos;
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+        public static void CambiarEstadoAEvaluado(double idProducto)
+        {
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand("Update producto set evaluado='true' where idproducto=@id",Conexion.conexion);
+                cmd.Parameters.Add("id",idProducto);
+                Conexion.abrirConexion();
+                cmd.ExecuteNonQuery();
+                Conexion.cerrarConexion();
             }
             catch (Exception ex)
             {

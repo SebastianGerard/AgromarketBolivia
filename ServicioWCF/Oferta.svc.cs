@@ -74,6 +74,8 @@ namespace ServicioWCF
             {
                 CorreoElectronico.enviar("agro.market.bolivia@gmail.com", oferta.usuarioSubasta.email, "GANADOR OFERTA AGROMARKET", "Agromarket Bolivia", "agromarketbolivia", "Le comunicamos que usted ganó la oferta que hizo al producto " + oferta.producto.nombre + " en fecha: " + oferta.fecha + ". Felicidades!!", 587, "smtp.gmail.com");
                 BaseDatosOferta.CambiarOfertaATomada(oferta);
+                BaseDatosOferta.CambiarOfertaAVencida(oferta);
+
             }
         }
         public void InformarPerdedores(List<ModeloOferta> ofertas)
@@ -81,15 +83,17 @@ namespace ServicioWCF
             foreach (ModeloOferta oferta in ofertas)
             {
                 CorreoElectronico.enviar("agro.market.bolivia@gmail.com",oferta.usuarioSubasta.email,"OFERTA PERDIDA AGROMARKET","Agromarket Bolivia","agromarketbolivia","Le comunicamos que usted perdió la oferta que hizo al producto "+oferta.producto.nombre+" en fecha: "+oferta.fecha+". Siga intentando, mejor suerte para la próxima.",587,"smtp.gmail.com");
+                BaseDatosOferta.CambiarOfertaAVencida(oferta);
             }
             
         }
         public void EscogerEstasOfertas(List<ModeloOferta> ofertasGanadoras,List<ModeloOferta> ofertasPerdedoras)
         {
+            
             float totalCantidad = 0;
             if (ofertasGanadoras == null)
                 throw new Exception("Debe escoger por lo menos una oferta");
-
+            BaseDatosProducto.CambiarEstadoAEvaluado(ofertasGanadoras[0].producto.idProducto);
             foreach (ModeloOferta oferta in ofertasGanadoras)
             {
                 totalCantidad += oferta.cantidad;
