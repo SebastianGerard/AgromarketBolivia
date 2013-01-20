@@ -14,25 +14,29 @@ namespace ServicioWCF
     public class Oferta : IOferta
     {
 
-        public void OfrecerOferta(float cantidad, float precio, double idproducto, string nombreUsuario, string tipoMoneda)
+        public void OfrecerOferta(string cantidad, string precio, string idproducto, string nombreUsuario, string tipoMoneda)
         {
             try
             {
                 float a;
-                if (!float.TryParse(cantidad.ToString(), out a))
+                float outCantidad;
+                float outPrecio;
+                double outIdProducto;
+                if (!float.TryParse(cantidad, out outCantidad))
                     throw new Exception("Cantidad inválida");
-                if (!float.TryParse(precio.ToString(), out a))
+                if (!float.TryParse(precio, out outPrecio))
                     throw new Exception("Precio inválido");
-                if (cantidad > BaseDatosProducto.ObtenerCantidadProducto(idproducto))
+                if(!double.TryParse(idproducto,out outIdProducto))
+                if (outCantidad > BaseDatosProducto.ObtenerCantidadProducto(outIdProducto))
                     throw new Exception("Cantidad excedida de la que se tiene");
-                if (cantidad < 0 || cantidad==0)
+                if (outCantidad < 0 || outCantidad==0)
                     throw new Exception("Cantidad tiene que ser mayor que 0");
-                if (precio < 0 || precio == 0)
+                if (outPrecio < 0 || outPrecio == 0)
                     throw new Exception("Precio tiene que ser mayor que 0");
-                if (BaseDatosOferta.YaTieneUnaOferta(idproducto, nombreUsuario))
+                if (BaseDatosOferta.YaTieneUnaOferta(outIdProducto, nombreUsuario))
                     throw new Exception("Usted ya tiene una oferta a este producto, espere los resultados");
 
-                BaseDatosOferta.OfrecerOferta(cantidad, precio, idproducto, nombreUsuario, tipoMoneda);
+                BaseDatosOferta.OfrecerOferta(outCantidad, outPrecio, outIdProducto, nombreUsuario, tipoMoneda);
             }
             catch (Exception ex)
             {

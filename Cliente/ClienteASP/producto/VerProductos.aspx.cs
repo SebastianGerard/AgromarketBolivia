@@ -52,5 +52,14 @@ namespace ClienteASP.producto
                 throw ex;
             }
         }
+
+        protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "Ver")
+            {
+                Label label = (Label)e.Item.FindControl("LabelNro");
+                Response.Redirect("VerProducto.aspx?id=" + label.Text);
+            }
+        }
     }
 }

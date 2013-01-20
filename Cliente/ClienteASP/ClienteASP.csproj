@@ -99,8 +99,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="oferta\HacerOferta.aspx" />
     <Content Include="producto\Registrar producto.aspx" />
     <Content Include="producto\RegistroExitoso.aspx" />
+    <Content Include="producto\VerProducto.aspx" />
     <Content Include="producto\VerProductos.aspx" />
     <Content Include="usuario\IngresarLogin.aspx" />
     <None Include="Service References\Producto\configuration91.svcinfo" />
@@ -201,6 +203,13 @@
     <Compile Include="MasterPages\SiteLoggedClient.Master.designer.cs">
       <DependentUpon>SiteLoggedClient.Master</DependentUpon>
     </Compile>
+    <Compile Include="oferta\HacerOferta.aspx.cs">
+      <DependentUpon>HacerOferta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oferta\HacerOferta.aspx.designer.cs">
+      <DependentUpon>HacerOferta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="producto\Registrar producto.aspx.cs">
       <DependentUpon>Registrar producto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -214,6 +223,13 @@
     </Compile>
     <Compile Include="producto\RegistroExitoso.aspx.designer.cs">
       <DependentUpon>RegistroExitoso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="producto\VerProducto.aspx.cs">
+      <DependentUpon>VerProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="producto\VerProducto.aspx.designer.cs">
+      <DependentUpon>VerProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="producto\VerProductos.aspx.cs">
       <DependentUpon>VerProductos.aspx</DependentUpon>

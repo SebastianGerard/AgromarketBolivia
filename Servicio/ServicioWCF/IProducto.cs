@@ -22,5 +22,7 @@ namespace ServicioWCF
         bool eliminarproducto(string idproducto);
         [OperationContract]
         List<ModeloProducto> ObtenerProductosNoEvaluados();
+        [OperationContract]
+        ModeloProducto ObtenerProductoPorId(string id);
     }
 }

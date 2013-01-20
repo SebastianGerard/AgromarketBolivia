@@ -37,6 +37,12 @@
   <wsdl:message name="IProducto_ObtenerProductosNoEvaluados_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerProductosNoEvaluadosResponse" />
   </wsdl:message>
+  <wsdl:message name="IProducto_ObtenerProductoPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductoPorId" />
+  </wsdl:message>
+  <wsdl:message name="IProducto_ObtenerProductoPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductoPorIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProducto">
     <wsdl:operation name="ObtenerTodosProductos">
       <wsdl:input wsaw:Action="http://tempuri.org/IProducto/ObtenerTodosProductos" message="tns:IProducto_ObtenerTodosProductos_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="ObtenerProductosNoEvaluados">
       <wsdl:input wsaw:Action="http://tempuri.org/IProducto/ObtenerProductosNoEvaluados" message="tns:IProducto_ObtenerProductosNoEvaluados_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProducto/ObtenerProductosNoEvaluadosResponse" message="tns:IProducto_ObtenerProductosNoEvaluados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductoPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProducto/ObtenerProductoPorId" message="tns:IProducto_ObtenerProductoPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProducto/ObtenerProductoPorIdResponse" message="tns:IProducto_ObtenerProductoPorId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProducto" type="tns:IProducto">
@@ -99,6 +109,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerProductosNoEvaluados">
       <soap:operation soapAction="http://tempuri.org/IProducto/ObtenerProductosNoEvaluados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductoPorId">
+      <soap:operation soapAction="http://tempuri.org/IProducto/ObtenerProductoPorId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

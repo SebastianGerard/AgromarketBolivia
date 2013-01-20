@@ -13,7 +13,7 @@ namespace ServicioWCF
     public interface IOferta
     {
         [OperationContract]
-        void OfrecerOferta(float cantidad, float precio, double idproducto, string nombreUsuario, string tipoMoneda);
+        void OfrecerOferta(string cantidad, string precio, string idproducto, string nombreUsuario, string tipoMoneda);
         [OperationContract]
         List<ModeloOferta> VerMisOfertas(string nombreUsuario);
         [OperationContract]

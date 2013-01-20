@@ -361,6 +361,9 @@ namespace ClienteASP.Producto {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/ObtenerProductosNoEvaluados", ReplyAction="http://tempuri.org/IProducto/ObtenerProductosNoEvaluadosResponse")]
         ClienteASP.Producto.ModeloProducto[] ObtenerProductosNoEvaluados();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/ObtenerProductoPorId", ReplyAction="http://tempuri.org/IProducto/ObtenerProductoPorIdResponse")]
+        ClienteASP.Producto.ModeloProducto ObtenerProductoPorId(string id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -408,6 +411,10 @@ namespace ClienteASP.Producto {
         
         public ClienteASP.Producto.ModeloProducto[] ObtenerProductosNoEvaluados() {
             return base.Channel.ObtenerProductosNoEvaluados();
+        }
+        
+        public ClienteASP.Producto.ModeloProducto ObtenerProductoPorId(string id) {
+            return base.Channel.ObtenerProductoPorId(id);
         }
     }
 }

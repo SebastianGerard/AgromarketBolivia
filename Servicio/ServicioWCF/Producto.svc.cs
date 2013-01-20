@@ -95,5 +95,23 @@ namespace ServicioWCF
                 throw ex;
             }
         }
+        public ModeloProducto ObtenerProductoPorId(string id)
+        {
+            try
+            {
+                double outId;
+                if (!double.TryParse(id, out outId))
+                    throw new Exception("Id no válido");
+                ModeloProducto producto = BaseDatosProducto.ObtenerProducto(outId);
+                if (producto == null)
+                    throw new Exception("No se encontro ningun producto con ese id");
+                return producto;
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
     }
 }

@@ -521,7 +521,7 @@ namespace ClienteASP.Oferta {
     public interface IOferta {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOferta/OfrecerOferta", ReplyAction="http://tempuri.org/IOferta/OfrecerOfertaResponse")]
-        void OfrecerOferta(float cantidad, float precio, double idproducto, string nombreUsuario, string tipoMoneda);
+        void OfrecerOferta(string cantidad, string precio, string idproducto, string nombreUsuario, string tipoMoneda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOferta/VerMisOfertas", ReplyAction="http://tempuri.org/IOferta/VerMisOfertasResponse")]
         ClienteASP.Oferta.ModeloOferta[] VerMisOfertas(string nombreUsuario);
@@ -560,7 +560,7 @@ namespace ClienteASP.Oferta {
                 base(binding, remoteAddress) {
         }
         
-        public void OfrecerOferta(float cantidad, float precio, double idproducto, string nombreUsuario, string tipoMoneda) {
+        public void OfrecerOferta(string cantidad, string precio, string idproducto, string nombreUsuario, string tipoMoneda) {
             base.Channel.OfrecerOferta(cantidad, precio, idproducto, nombreUsuario, tipoMoneda);
         }
         

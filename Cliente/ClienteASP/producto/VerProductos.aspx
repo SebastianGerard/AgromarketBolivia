@@ -49,7 +49,8 @@
                     <td class="style5">
                         &nbsp;</td>
                     <td class="style6">
-                        <asp:DataList ID="DataList1" runat="server">
+                        <asp:DataList ID="DataList1" runat="server" 
+                            onitemcommand="DataList1_ItemCommand">
                             <ItemTemplate>
                                 <asp:Panel ID="Panel1" runat="server" GroupingText="Producto" Width="473px">
                                     <table style="width:100%;">
@@ -89,9 +90,10 @@
                                             <td class="style4">
                                                 &nbsp;</td>
                                             <td>
-                                                &nbsp;</td>
+                                               <asp:Label ID="LabelNro" runat="server" Text='<%# Eval("idProducto") %>' Visible="false"></asp:Label>
+                                            </td>
                                             <td>
-                                                <asp:LinkButton ID="LinkButton1" runat="server">Ver detalles...</asp:LinkButton>
+                                                <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Ver">Ver detalles...</asp:LinkButton>
                                             </td>
                                         </tr>
                                     </table>

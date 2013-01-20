@@ -4,9 +4,9 @@
   <xs:element name="OfrecerOferta">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="cantidad" type="xs:float" />
-        <xs:element minOccurs="0" name="precio" type="xs:float" />
-        <xs:element minOccurs="0" name="idproducto" type="xs:double" />
+        <xs:element minOccurs="0" name="cantidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="precio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idproducto" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="tipoMoneda" nillable="true" type="xs:string" />
       </xs:sequence>

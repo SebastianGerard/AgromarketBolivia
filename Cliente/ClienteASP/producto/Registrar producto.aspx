@@ -23,6 +23,10 @@
         {
             width: 201px;
         }
+        .style6
+        {
+            text-align: left;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -49,14 +53,14 @@
                                 <tr>
                                     <td class="style2">
                                         Nombre:</td>
-                                    <td>
+                                    <td class="style6">
                                         <asp:TextBox ID="TextBoxNombre" runat="server" MaxLength="50"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="style2" valign="top">
                                         Detalle:</td>
-                                    <td>
+                                    <td class="style6">
                                         <asp:TextBox ID="TextBoxDetalle" runat="server" Height="51px" MaxLength="200" 
                                             TextMode="MultiLine" Width="206px"></asp:TextBox>
                                     </td>
@@ -65,14 +69,14 @@
                                     <td class="style2">
                                         Cantidad:
                                     </td>
-                                    <td>
+                                    <td class="style6">
                                         <asp:TextBox ID="TextBoxCantidad" runat="server" MaxLength="9"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="style2" valign="top">
                                         Fecha de vencimiento de la subasta:</td>
-                                    <td>
+                                    <td class="style6">
                                         <asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" 
                                             BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" 
                                             Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="134px" 
@@ -91,7 +95,7 @@
                                 <tr>
                                     <td class="style2">
                                         Unidad de medida:</td>
-                                    <td>
+                                    <td class="style6">
                                         <asp:TextBox ID="TextBoxUnidad" runat="server" MaxLength="10"></asp:TextBox>
                                     </td>
                                 </tr>
