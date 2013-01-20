@@ -174,5 +174,34 @@ namespace BaseDatos
             }
         }
 
+        public static bool ModificarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string email)
+        {
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand("update usuario set nombre = @nombre, apellido = @apellido, direccion = @direccion, email = @email where nombreusuario = @nombreusuario", Conexion.conexion);
+                cmd.Parameters.Add("nombre", nombre);
+                cmd.Parameters.Add("apellido", apellido);
+                cmd.Parameters.Add("direccion", direccion);
+                cmd.Parameters.Add("nombreusuario", nombreusuario);                
+                cmd.Parameters.Add("email", email);
+                Conexion.abrirConexion();
+                if (cmd.ExecuteNonQuery() != -1)
+                {
+                    Conexion.cerrarConexion();
+                    return true;
+                }
+                else
+                {
+                    Conexion.cerrarConexion();
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
+            }
+        }
+
     }
 }

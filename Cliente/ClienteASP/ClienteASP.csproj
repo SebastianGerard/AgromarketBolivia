@@ -100,8 +100,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="oferta\HacerOferta.aspx" />
-    <Content Include="oferta\OfertaExitosa.aspx" />
-    <Content Include="oferta\VerMisOfertas.aspx" />
     <Content Include="producto\Registrar producto.aspx" />
     <Content Include="producto\RegistroExitoso.aspx" />
     <Content Include="producto\VerProducto.aspx" />
@@ -126,6 +124,7 @@
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="usuario\BuscarUsuario.aspx" />
+    <Content Include="usuario\ModificarUsuario.aspx" />
     <Content Include="usuario\RegistrarUsuario.aspx" />
     <Content Include="usuario\VerPerfil.aspx" />
     <Content Include="Web.config" />
@@ -213,20 +212,6 @@
     <Compile Include="oferta\HacerOferta.aspx.designer.cs">
       <DependentUpon>HacerOferta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="oferta\OfertaExitosa.aspx.cs">
-      <DependentUpon>OfertaExitosa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="oferta\OfertaExitosa.aspx.designer.cs">
-      <DependentUpon>OfertaExitosa.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="oferta\VerMisOfertas.aspx.cs">
-      <DependentUpon>VerMisOfertas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="oferta\VerMisOfertas.aspx.designer.cs">
-      <DependentUpon>VerMisOfertas.aspx</DependentUpon>
-    </Compile>
     <Compile Include="producto\Registrar producto.aspx.cs">
       <DependentUpon>Registrar producto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -284,6 +269,13 @@
     </Compile>
     <Compile Include="usuario\BuscarUsuario.aspx.designer.cs">
       <DependentUpon>BuscarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usuario\ModificarUsuario.aspx.cs">
+      <DependentUpon>ModificarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuario\ModificarUsuario.aspx.designer.cs">
+      <DependentUpon>ModificarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="usuario\RegistrarUsuario.aspx.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>

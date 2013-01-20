@@ -90,4 +90,36 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ModificarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreusuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModificarUsuarioResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarPorNombreusuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buscarPorNombreusuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ModeloWCF" minOccurs="0" name="buscarPorNombreusuarioResult" nillable="true" type="q5:ModeloUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

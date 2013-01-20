@@ -19,6 +19,11 @@ namespace ClienteASP.usuario
                 FormsAuthentication.RedirectToLoginPage();
             else
             {
+                Usuario.UsuarioClient cliente = new UsuarioClient();
+                ModeloUsuario temporal = new ModeloUsuario();
+                temporal = (ModeloUsuario)Session["Usuario"];
+                Session["Usuario"] = cliente.buscarPorNombreusuario(temporal.nombreUsuario);
+
                 usuario = (ModeloUsuario)Session["Usuario"];
                 cargarDatos(usuario);
             }

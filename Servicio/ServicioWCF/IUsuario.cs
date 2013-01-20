@@ -22,6 +22,10 @@ namespace ServicioWCF
         bool insertarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email);
         [OperationContract]
         bool buscarUsuarioPorNombreUsuario(string nombreUsuario);
+        [OperationContract]
+        bool ModificarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string email);
+        [OperationContract]
+        ModeloUsuario buscarPorNombreusuario(string nombreUsuario);
     
     }
 }

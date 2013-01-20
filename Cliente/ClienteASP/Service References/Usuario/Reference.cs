@@ -175,6 +175,12 @@ namespace ClienteASP.Usuario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuario/buscarUsuarioPorNombreUsuario", ReplyAction="http://tempuri.org/IUsuario/buscarUsuarioPorNombreUsuarioResponse")]
         bool buscarUsuarioPorNombreUsuario(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuario/ModificarUsuario", ReplyAction="http://tempuri.org/IUsuario/ModificarUsuarioResponse")]
+        bool ModificarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuario/buscarPorNombreusuario", ReplyAction="http://tempuri.org/IUsuario/buscarPorNombreusuarioResponse")]
+        ClienteASP.Usuario.ModeloUsuario buscarPorNombreusuario(string nombreUsuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -226,6 +232,14 @@ namespace ClienteASP.Usuario {
         
         public bool buscarUsuarioPorNombreUsuario(string nombreUsuario) {
             return base.Channel.buscarUsuarioPorNombreUsuario(nombreUsuario);
+        }
+        
+        public bool ModificarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string email) {
+            return base.Channel.ModificarUsuario(nombre, apellido, direccion, nombreusuario, email);
+        }
+        
+        public ClienteASP.Usuario.ModeloUsuario buscarPorNombreusuario(string nombreUsuario) {
+            return base.Channel.buscarPorNombreusuario(nombreUsuario);
         }
     }
 }

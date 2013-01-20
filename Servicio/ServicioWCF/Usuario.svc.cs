@@ -30,6 +30,24 @@ namespace ServicioWCF
             
         }
 
+        public ModeloUsuario buscarPorNombreusuario(string nombreUsuario)
+        {
+            try
+            {
+                //TODO acceso a BaseDatos Consultando si es correcto o no.
+                ModeloUsuario modeloUsuario = BaseDatosUsuario.ObtenerUsuario(nombreUsuario);
+                if (modeloUsuario == null)
+                    throw new Exception("Nombre de usuario o contraseña inválidas");
+                return modeloUsuario;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
         public bool buscarUsuarioPorNombreUsuario(string nombreUsuario)
         {
             try
@@ -134,6 +152,20 @@ namespace ServicioWCF
                 }
             
 
+        }
+        public bool ModificarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string email)
+        {
+            try
+            {
+               
+                return BaseDatosUsuario.ModificarUsuario(nombre, apellido, direccion, nombreusuario, email);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            } 
         }
        
 
