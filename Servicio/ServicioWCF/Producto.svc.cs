@@ -44,7 +44,7 @@ namespace ServicioWCF
                 throw ex;
             }
         }
-        public bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno,byte[] imagen)
+        public bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno)
         {
             try
             {
@@ -64,10 +64,9 @@ namespace ServicioWCF
 
                 if (date < DateTime.Now.Date)
                     throw new Exception("Fecha de vencimiento inválida, introduzca una fecha posterior a hoy");
-                if (imagen == null)
-                    throw new Exception("Debe cargar una imagen del producto");
+                
 
-                return BaseDatosProducto.registrarProducto(nombre, cantidad, unidad, fechavencimientooferta, detalle, nombreusuariodueno,imagen);
+                return BaseDatosProducto.registrarProducto(nombre, cantidad, unidad, fechavencimientooferta, detalle, nombreusuariodueno);
 
             }
             catch (Exception ex)

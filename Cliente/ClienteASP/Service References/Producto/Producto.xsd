@@ -36,7 +36,6 @@
         <xs:element minOccurs="0" name="detalle" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="fechavencimientooferta" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="nombreusuariodueno" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="imagen" nillable="true" type="xs:base64Binary" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

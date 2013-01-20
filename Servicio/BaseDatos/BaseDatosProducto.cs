@@ -35,7 +35,7 @@ namespace BaseDatos
                         producto.unidad = reader["unidad"].ToString();
                         producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
                         producto.evaluado = (bool)reader["evaluado"];
-                        producto.imagen = (byte[])reader["imagen"];
+                        
                         productos.Add(producto);
                     }
                 }
@@ -92,7 +92,7 @@ namespace BaseDatos
                     producto.unidad = reader["unidad"].ToString();
                     producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
                     producto.evaluado = (bool)reader["evaluado"];
-                    producto.imagen = (byte[])reader["imagen"];
+                    
                 }
                 return producto;
             }
@@ -127,7 +127,7 @@ namespace BaseDatos
                         producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
                         producto.unidad = reader["unidad"].ToString();
                         producto.evaluado = (bool)reader["evaluado"];
-                        producto.imagen = (byte[])reader["imagen"];
+                        
                         productos.Add(producto);
                     }
                 }
@@ -140,11 +140,11 @@ namespace BaseDatos
                 throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
-        public static bool registrarProducto(string nombre, string cantidad, string unidad, string fechavencimientooferta, string detalle, string nombreusuariodueno,byte[] imagen)
+        public static bool registrarProducto(string nombre, string cantidad, string unidad, string fechavencimientooferta, string detalle, string nombreusuariodueno)
         {
             try
             {
-                NpgsqlCommand cmd = new NpgsqlCommand("Insert into producto (nombre,detalle,cantidad,fechaoferta,fechavencimientooferta,nombreusuariodueno,unidad,evaluado,imagen) values(@nombre, @detalle,@cantidad,  @fechaoferta, @fechavencimientooferta, @nombreusuariodueno,@unidad,'false',@imagen)", Conexion.conexion);
+                NpgsqlCommand cmd = new NpgsqlCommand("Insert into producto (nombre,detalle,cantidad,fechaoferta,fechavencimientooferta,nombreusuariodueno,unidad,evaluado) values(@nombre, @detalle,@cantidad,  @fechaoferta, @fechavencimientooferta, @nombreusuariodueno,@unidad,'false')", Conexion.conexion);
                 //NO SE INSERTA IDPRODUCTO, PORQ ES AUTOGENERADO DE TIPO'SERIAL'
                 cmd.Parameters.Add("nombre", nombre);
                 cmd.Parameters.Add("cantidad", cantidad);
@@ -153,7 +153,6 @@ namespace BaseDatos
                 cmd.Parameters.Add("fechavencimientooferta", fechavencimientooferta);
                 cmd.Parameters.Add("detalle", detalle);
                 cmd.Parameters.Add("nombreusuariodueno", nombreusuariodueno);
-                cmd.Parameters.Add("imagen",imagen);
                 Conexion.abrirConexion();
                 if (cmd.ExecuteNonQuery() != -1)
                 {
@@ -194,7 +193,7 @@ namespace BaseDatos
                         producto.idProducto = Double.Parse(reader["idproducto"].ToString());
                         producto.unidad = reader["unidad"].ToString();
                         producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
-                        producto.imagen = (byte[])reader["imagen"];
+                        
                         productos.Add(producto);
                     }
                 }

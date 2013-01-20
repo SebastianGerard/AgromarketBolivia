@@ -354,7 +354,7 @@ namespace ClienteASP.Producto {
         ClienteASP.Producto.ModeloProducto[] ObtenerProductosConElNombre(string nombre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/registrarproducto", ReplyAction="http://tempuri.org/IProducto/registrarproductoResponse")]
-        bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno, byte[] imagen);
+        bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/eliminarproducto", ReplyAction="http://tempuri.org/IProducto/eliminarproductoResponse")]
         bool eliminarproducto(string idproducto);
@@ -398,8 +398,8 @@ namespace ClienteASP.Producto {
             return base.Channel.ObtenerProductosConElNombre(nombre);
         }
         
-        public bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno, byte[] imagen) {
-            return base.Channel.registrarproducto(nombre, cantidad, unidad, detalle, fechavencimientooferta, nombreusuariodueno, imagen);
+        public bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno) {
+            return base.Channel.registrarproducto(nombre, cantidad, unidad, detalle, fechavencimientooferta, nombreusuariodueno);
         }
         
         public bool eliminarproducto(string idproducto) {

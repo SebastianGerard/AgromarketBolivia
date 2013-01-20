@@ -18,6 +18,8 @@
      </head>
 <body background="../Imagenes/Fondo2.jpg">
     <form id="Form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <div class="page">
         <div class="header">
             <div>

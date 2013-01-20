@@ -21,6 +21,8 @@
     <div class="page">
         <div class="header">
             <div>
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
                 <img alt="lol" class="style1" src="/Imagenes/Fondo.jpg" />
             </div>
             <div class="clear hideSkiplink">
@@ -31,7 +33,8 @@
                         <asp:MenuItem Text="Productos" Value="Productos">
                             <asp:MenuItem Text="Ver productos" Value="Ver productos"></asp:MenuItem>
                             <asp:MenuItem Text="Buscar productos" Value="Buscar productos"></asp:MenuItem>
-                            <asp:MenuItem Text="Registrar producto" Value="Registrar producto">
+                            <asp:MenuItem Text="Registrar producto" Value="Registrar producto" 
+                                NavigateUrl="~/producto/Registrar producto.aspx">
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Ofertas" Value="Ofertas">

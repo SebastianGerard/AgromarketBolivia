@@ -9,10 +9,6 @@
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
      <style type="text/css">
-         .style5
-         {
-             text-align: right;
-         }
          .style1
          {
              height: 404px;
@@ -25,6 +21,9 @@
     <div class="page">
         <div class="header">
             <div>
+                
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
                 
                 <img alt="lol" class="style1" src="/Imagenes/Fondo.jpg" />
                 
