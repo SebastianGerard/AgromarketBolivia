@@ -125,6 +125,7 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="usuario\BuscarUsuario.aspx" />
     <Content Include="usuario\RegistrarUsuario.aspx" />
+    <Content Include="usuario\VerPerfil.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -274,6 +275,13 @@
     </Compile>
     <Compile Include="usuario\RegistrarUsuario.aspx.designer.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usuario\VerPerfil.aspx.cs">
+      <DependentUpon>VerPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuario\VerPerfil.aspx.designer.cs">
+      <DependentUpon>VerPerfil.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

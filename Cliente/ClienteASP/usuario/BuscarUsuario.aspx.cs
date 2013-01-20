@@ -17,6 +17,7 @@ namespace ClienteASP.usuario
             if (!User.Identity.IsAuthenticated || modeloUsuario==null || modeloUsuario.nivelAcceso!="Administrador" )
                 FormsAuthentication.RedirectToLoginPage();
             Usuario.UsuarioClient usuario = new Usuario.UsuarioClient();
+            
             GridViewUsuario.DataSource = usuario.ObtenerTodosUsuarios();
             GridViewUsuario.DataBind();
         }

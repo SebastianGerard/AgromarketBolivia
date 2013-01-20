@@ -73,7 +73,7 @@ namespace ClienteASP.usuario
                     {
                         try
                         {
-                            if (usuario.insertarUsuario(TextBoxUsuario.Text, TextBoxApellido.Text, TextBoxDireccion.Text, TextBoxNombreUsuario.Text, TextBoxContrasena.Text, "admin", TextBoxEmail.Text))
+                            if (usuario.insertarUsuario(TextBoxUsuario.Text, TextBoxApellido.Text, TextBoxDireccion.Text, TextBoxNombreUsuario.Text, TextBoxContrasena.Text, "Cliente", TextBoxEmail.Text))
                             {
 
                                 Server.Transfer("~/usuario/IngresarLogin.aspx", true);

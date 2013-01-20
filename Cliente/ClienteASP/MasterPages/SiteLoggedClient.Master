@@ -42,7 +42,7 @@
                             <asp:MenuItem Text="Ver mis ofertas" Value="Ver mis ofertas"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Cuenta" Value="Cuenta">
-                            <asp:MenuItem Text="Ver mi perfil" Value="Ver mi perfil"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/usuario/VerPerfil.aspx" Text="Ver mi perfil" ></asp:MenuItem>
                             <asp:MenuItem Text="Editar mi perfil" Value="Editar mi perfil"></asp:MenuItem>
                         </asp:MenuItem>
                     </Items>
