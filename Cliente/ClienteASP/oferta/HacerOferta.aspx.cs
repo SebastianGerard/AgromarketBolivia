@@ -51,6 +51,7 @@ namespace ClienteASP.Oferta
         {
             try
             {
+                LabelError.Text = "";
                 ClienteASP.Producto.ProductoClient clientep = new Producto.ProductoClient();
                 ClienteASP.Producto.ModeloProducto producto =clientep.ObtenerProductoPorId( Request.QueryString["id"]);
                 ClienteASP.Usuario.ModeloUsuario usuario = (Usuario.ModeloUsuario)Session["Usuario"];
@@ -63,6 +64,7 @@ namespace ClienteASP.Oferta
                 {
                     ClienteASP.Oferta.OfertaClient cliente = new OfertaClient();
                     cliente.OfrecerOferta(TextBoxCantidad.Text, TextBoxPrecio.Text, producto.idProducto.ToString(), usuario.nombreUsuario, DropDownList1.SelectedItem.ToString());
+                    Response.Redirect("OfertaExitosa.aspx");
                 }
                 
             }

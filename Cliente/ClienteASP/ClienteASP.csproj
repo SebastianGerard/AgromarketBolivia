@@ -100,6 +100,8 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="oferta\HacerOferta.aspx" />
+    <Content Include="oferta\OfertaExitosa.aspx" />
+    <Content Include="oferta\VerMisOfertas.aspx" />
     <Content Include="producto\Registrar producto.aspx" />
     <Content Include="producto\RegistroExitoso.aspx" />
     <Content Include="producto\VerProducto.aspx" />
@@ -210,6 +212,20 @@
     </Compile>
     <Compile Include="oferta\HacerOferta.aspx.designer.cs">
       <DependentUpon>HacerOferta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oferta\OfertaExitosa.aspx.cs">
+      <DependentUpon>OfertaExitosa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oferta\OfertaExitosa.aspx.designer.cs">
+      <DependentUpon>OfertaExitosa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oferta\VerMisOfertas.aspx.cs">
+      <DependentUpon>VerMisOfertas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oferta\VerMisOfertas.aspx.designer.cs">
+      <DependentUpon>VerMisOfertas.aspx</DependentUpon>
     </Compile>
     <Compile Include="producto\Registrar producto.aspx.cs">
       <DependentUpon>Registrar producto.aspx</DependentUpon>

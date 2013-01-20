@@ -26,7 +26,8 @@ namespace ServicioWCF
                     throw new Exception("Cantidad inválida");
                 if (!float.TryParse(precio, out outPrecio))
                     throw new Exception("Precio inválido");
-                if(!double.TryParse(idproducto,out outIdProducto))
+                if (!double.TryParse(idproducto, out outIdProducto))
+                    throw new Exception("Id no válido");
                 if (outCantidad > BaseDatosProducto.ObtenerCantidadProducto(outIdProducto))
                     throw new Exception("Cantidad excedida de la que se tiene");
                 if (outCantidad < 0 || outCantidad==0)
@@ -35,7 +36,6 @@ namespace ServicioWCF
                     throw new Exception("Precio tiene que ser mayor que 0");
                 if (BaseDatosOferta.YaTieneUnaOferta(outIdProducto, nombreUsuario))
                     throw new Exception("Usted ya tiene una oferta a este producto, espere los resultados");
-
                 BaseDatosOferta.OfrecerOferta(outCantidad, outPrecio, outIdProducto, nombreUsuario, tipoMoneda);
             }
             catch (Exception ex)

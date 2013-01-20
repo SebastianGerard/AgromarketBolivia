@@ -39,7 +39,7 @@
                             </asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Ofertas" Value="Ofertas">
-                            <asp:MenuItem Text="Ver mis ofertas" Value="Ver mis ofertas"></asp:MenuItem>
+                            <asp:MenuItem Text="Ver mis ofertas" Value="Ver mis ofertas" NavigateUrl="~/oferta/VerMisOfertas.aspx"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Cuenta" Value="Cuenta">
                             <asp:MenuItem NavigateUrl="~/usuario/VerPerfil.aspx" Text="Ver mi perfil" ></asp:MenuItem>
