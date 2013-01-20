@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Drawing;
 
 namespace ModeloWCF
 {
@@ -28,5 +29,7 @@ namespace ModeloWCF
         public string unidad { get; set; }
         [DataMember]
         public bool evaluado { get; set; }
+        [DataMember]
+        public byte[] imagen { get; set; }
     }
 }

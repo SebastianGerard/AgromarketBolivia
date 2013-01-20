@@ -83,15 +83,15 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Servicio\BaseDatos\BaseDatos.csproj">
+    <ProjectReference Include="..\BaseDatos\BaseDatos.csproj">
       <Project>{DAAA34A2-9328-47EA-A576-4B786577D112}</Project>
       <Name>BaseDatos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Servicio\ModeloWCF\ModeloWCF.csproj">
+    <ProjectReference Include="..\ModeloWCF\ModeloWCF.csproj">
       <Project>{3A8258AE-491A-4F52-9201-12278D21A668}</Project>
       <Name>ModeloWCF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Servicio\Utilidad\Utilidad.csproj">
+    <ProjectReference Include="..\Utilidad\Utilidad.csproj">
       <Project>{A3927E35-20DA-468D-8302-F7685A533CA2}</Project>
       <Name>Utilidad</Name>
     </ProjectReference>

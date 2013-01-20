@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/SiteLoggedAdmin.Master" AutoEventWireup="true" 
     CodeBehind="BuscarUsuario.aspx.cs" Inherits="ClienteASP.usuario.BuscarUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
      </asp:Content>

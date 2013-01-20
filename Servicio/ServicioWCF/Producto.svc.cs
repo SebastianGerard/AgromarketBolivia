@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using ModeloWCF;
 using BaseDatos;
+using System.Drawing;
 
 namespace ServicioWCF
 {
@@ -43,7 +44,7 @@ namespace ServicioWCF
                 throw ex;
             }
         }
-        public bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno)
+        public bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno,byte[] imagen)
         {
             try
             {
@@ -63,8 +64,10 @@ namespace ServicioWCF
 
                 if (date < DateTime.Now.Date)
                     throw new Exception("Fecha de vencimiento inválida, introduzca una fecha posterior a hoy");
-                
-                return BaseDatosProducto.registrarProducto(nombre, cantidad, unidad, fechavencimientooferta, detalle, nombreusuariodueno);
+                if (imagen == null)
+                    throw new Exception("Debe cargar una imagen del producto");
+
+                return BaseDatosProducto.registrarProducto(nombre, cantidad, unidad, fechavencimientooferta, detalle, nombreusuariodueno,imagen);
 
             }
             catch (Exception ex)

@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using ModeloWCF;
+using System.Drawing;
 namespace ServicioWCF
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IProducto" in both code and config file together.
@@ -16,7 +17,7 @@ namespace ServicioWCF
         [OperationContract]
         List<ModeloProducto> ObtenerProductosConElNombre(string nombre);
         [OperationContract]
-        bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno);
+        bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno,byte[] imagen);
         [OperationContract]
         bool eliminarproducto(string idproducto);
         [OperationContract]
