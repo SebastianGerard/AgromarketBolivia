@@ -2,7 +2,7 @@
     CodeBehind="ModificarUsuario.aspx.cs" Inherits="ClienteASP.usuario.ModificarUsuario" %>
 
     <asp:Content ID="Content2"  contentplaceholderid="MainContent" runat="server">
-        <table style="width:100%; margin-left: 278px;">
+        <table style="width:100%; margin-left: 87px;">
         <tr>
             <td class="style2">
                 <asp:Label ID="Label1" runat="server" Text="Nombre :"></asp:Label>
