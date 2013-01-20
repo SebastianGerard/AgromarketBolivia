@@ -33,5 +33,24 @@ namespace ClienteASP.usuario
                 this.MasterPageFile = res;
             }
         }
+
+        protected void ButtonBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Usuario.UsuarioClient usuario = new Usuario.UsuarioClient();
+                GridViewUsuario.DataSource = usuario.ObtenerUsuariosConElNombre(TextBoxBuscar.Text);
+               
+                GridViewUsuario.DataBind();
+                GridViewUsuario.Columns[1].Visible = false;
+                GridViewUsuario.Columns[4].Visible = false;
+                
+            }
+            catch (Exception ex)
+            {
+                LabelError.Text = ex.Message;
+            }
+                
+        }
     }
 }

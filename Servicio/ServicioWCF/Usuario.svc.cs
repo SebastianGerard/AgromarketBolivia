@@ -34,9 +34,12 @@ namespace ServicioWCF
         {
             try
             {
-                //TODO acceso a BaseDatos Consultando si es correcto o no.
-                ModeloUsuario modeloUsuario = BaseDatosUsuario.ObtenerUsuario(nombreUsuario);
-                return (modeloUsuario.nombreUsuario == nombreUsuario);
+                    //TODO acceso a BaseDatos Consultando si es correcto o no.
+                    ModeloUsuario modeloUsuario = BaseDatosUsuario.ObtenerUsuario(nombreUsuario);
+                    if (modeloUsuario == null)
+                        throw new Exception("No se encontró ningún usuario");
+                    return (modeloUsuario.nombreUsuario == nombreUsuario);
+                
             }
             catch (Exception ex)
             {
@@ -96,16 +99,21 @@ namespace ServicioWCF
 
         public bool insertarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email)
         {
-            try 
-            {
-                return BaseDatosUsuario.registrarUsuario(nombre,apellido,direccion,nombreusuario,contrasena,nivelacceso,email);
-                
-            }
-            catch (Exception ex)
-            {
+            
+                try
+                {
+                    if (this.buscarUsuarioPorNombreUsuario(nombreusuario))
+                        throw new Exception("El nombre de usuario ya existe");                    
+                    return BaseDatosUsuario.registrarUsuario(nombre, apellido, direccion, nombreusuario, contrasena, nivelacceso, email);
 
-                throw ex;
-            }
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+            
+
         }
        
 

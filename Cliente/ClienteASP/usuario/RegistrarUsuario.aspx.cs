@@ -65,39 +65,41 @@ namespace ClienteASP.usuario
             Usuario.UsuarioClient usuario = new Usuario.UsuarioClient();
             //usuario.insertarUsuario();
             resetearLabelErrores();
-            if (usuario.buscarUsuarioPorNombreUsuario(TextBoxNombreUsuario.Text))
+            try
             {
-                LabelErrorNombreUsuario.Text = "Nombre ya existe";
-            }
-            else
-            {
-                if (validarCampos())
-                { }
-                else
-                {
-                    try
+                  if (validarCampos())
+                    { }
+                    else
                     {
-                        if (usuario.insertarUsuario(TextBoxUsuario.Text, TextBoxApellido.Text, TextBoxDireccion.Text, TextBoxNombreUsuario.Text, TextBoxContrasena.Text, "admin", TextBoxEmail.Text))
+                        try
                         {
-                            
-                            Server.Transfer("~/IngresarLogin.aspx", true); 
-                        }
-                        
-                    }
-                    catch (Exception ex)
-                    {
+                            if (usuario.insertarUsuario(TextBoxUsuario.Text, TextBoxApellido.Text, TextBoxDireccion.Text, TextBoxNombreUsuario.Text, TextBoxContrasena.Text, "admin", TextBoxEmail.Text))
+                            {
 
-                        LabelError.Text = ex.Message;
+                                Server.Transfer("~/usuario/IngresarLogin.aspx", true);
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                            LabelError.Text = ex.Message;
+                        }
                     }
-                }
+               
             }
+            catch (Exception ex)
+            {
+                LabelErrorNombreUsuario.Text = "Debes escribir un nombre de usuario"; 
+            }
+                
      
             
         }
         protected void ButtonCancelar_Click(object sender, EventArgs e)
         {
             //Response.Redirect("IngresarLogin.aspx");
-            Server.Transfer("~/IngresarLogin.aspx", true);
+            Server.Transfer("~/usuario/IngresarLogin.aspx", true);
         }
     }
 }

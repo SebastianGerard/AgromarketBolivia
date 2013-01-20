@@ -46,7 +46,7 @@ namespace BaseDatos
             try 
             {
                 List<ModeloUsuario> usuarios = null;
-                NpgsqlCommand cmd = new NpgsqlCommand("select * from usuario", Conexion.conexion);
+                NpgsqlCommand cmd = new NpgsqlCommand("select nombre,apellido,direccion,nombreusuario,email from usuario", Conexion.conexion);
                 Conexion.abrirConexion();
                 NpgsqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -59,8 +59,8 @@ namespace BaseDatos
                         usuario.apellido = reader["apellido"].ToString();
                         usuario.direccion = reader["direccion"].ToString();
                         usuario.nombreUsuario = reader["nombreusuario"].ToString();
-                        usuario.contrasena = reader["contrasena"].ToString();
-                        usuario.nivelAcceso = reader["nivelacceso"].ToString();
+                        //usuario.contrasena = reader["contrasena"].ToString();
+                       // usuario.nivelAcceso = reader["nivelacceso"].ToString();
                         usuario.email = reader["email"].ToString();
                         usuarios.Add(usuario);
                     }
@@ -80,7 +80,7 @@ namespace BaseDatos
             try
             {
                 List<ModeloUsuario> usuarios = null;
-                NpgsqlCommand cmd = new NpgsqlCommand("select * from usuario where nombre like '%" + nombre + "%'", Conexion.conexion);
+                NpgsqlCommand cmd = new NpgsqlCommand("select nombre,apellido,direccion,nombreusuario,email from usuario where nombre like '%" + nombre + "%'", Conexion.conexion);
                 Conexion.abrirConexion();
                 NpgsqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -93,8 +93,8 @@ namespace BaseDatos
                         usuario.apellido = reader["apellido"].ToString();
                         usuario.direccion = reader["direccion"].ToString();
                         usuario.nombreUsuario = reader["nombreusuario"].ToString();
-                        usuario.contrasena = reader["contrasena"].ToString();
-                        usuario.nivelAcceso = reader["nivelacceso"].ToString();
+                        //usuario.contrasena = reader["contrasena"].ToString();
+                        //usuario.nivelAcceso = reader["nivelacceso"].ToString();
                         usuario.email = reader["email"].ToString();
                         usuarios.Add(usuario);
                     }
