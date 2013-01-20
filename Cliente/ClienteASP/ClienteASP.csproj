@@ -101,6 +101,7 @@
     </None>
     <Content Include="producto\Registrar producto.aspx" />
     <Content Include="producto\RegistroExitoso.aspx" />
+    <Content Include="producto\VerProductos.aspx" />
     <Content Include="usuario\IngresarLogin.aspx" />
     <None Include="Service References\Producto\configuration91.svcinfo" />
     <None Include="Service References\Producto\configuration.svcinfo" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="producto\RegistroExitoso.aspx.designer.cs">
       <DependentUpon>RegistroExitoso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="producto\VerProductos.aspx.cs">
+      <DependentUpon>VerProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="producto\VerProductos.aspx.designer.cs">
+      <DependentUpon>VerProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="usuario\IngresarLogin.aspx.cs">
       <DependentUpon>IngresarLogin.aspx</DependentUpon>

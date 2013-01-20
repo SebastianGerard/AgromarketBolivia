@@ -107,7 +107,7 @@ namespace BaseDatos
             try
             {
                 List<ModeloProducto> productos = new List<ModeloProducto>();
-                NpgsqlCommand cmd = new NpgsqlCommand("Select * from producto where nombre like '%"+nombre+"%' and fechavencimientooferta>=@date and evaluado='false'",Conexion.conexion);
+                NpgsqlCommand cmd = new NpgsqlCommand("Select * from producto where fechavencimientooferta>=@date and evaluado='false' and nombre like '%"+nombre+"%'", Conexion.conexion);
                 cmd.Parameters.Add("date",DateTime.Now.Date);
                 Conexion.abrirConexion();
                 NpgsqlDataReader reader = cmd.ExecuteReader();

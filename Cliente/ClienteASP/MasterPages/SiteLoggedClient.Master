@@ -31,8 +31,9 @@
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Inicio"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca"/>
                         <asp:MenuItem Text="Productos" Value="Productos">
-                            <asp:MenuItem Text="Ver productos" Value="Ver productos"></asp:MenuItem>
-                            <asp:MenuItem Text="Buscar productos" Value="Buscar productos"></asp:MenuItem>
+                            <asp:MenuItem Text="Ver productos" Value="Ver productos" 
+                                NavigateUrl="~/producto/VerProductos.aspx"></asp:MenuItem>
+                            
                             <asp:MenuItem Text="Registrar producto" Value="Registrar producto" 
                                 NavigateUrl="~/producto/Registrar producto.aspx">
                             </asp:MenuItem>
