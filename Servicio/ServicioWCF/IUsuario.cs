@@ -11,7 +11,7 @@ namespace ServicioWCF
     public interface IUsuario
     {
         [OperationContract]
-        bool Login(string nombreUsuario, string contrasena);
+        ModeloUsuario Login(string nombreUsuario, string contrasena);
         [OperationContract]
         List<ModeloUsuario> ObtenerTodosUsuarios();
         [OperationContract]

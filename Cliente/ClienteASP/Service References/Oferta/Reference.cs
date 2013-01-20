@@ -205,6 +205,9 @@ namespace ClienteASP.Oferta {
         private string detalleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool evaluadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime fechaOfertaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -212,6 +215,9 @@ namespace ClienteASP.Oferta {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double idProductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] imagenField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nombreField;
@@ -269,6 +275,19 @@ namespace ClienteASP.Oferta {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool evaluado {
+            get {
+                return this.evaluadoField;
+            }
+            set {
+                if ((this.evaluadoField.Equals(value) != true)) {
+                    this.evaluadoField = value;
+                    this.RaisePropertyChanged("evaluado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime fechaOferta {
             get {
                 return this.fechaOfertaField;
@@ -303,6 +322,19 @@ namespace ClienteASP.Oferta {
                 if ((this.idProductoField.Equals(value) != true)) {
                     this.idProductoField = value;
                     this.RaisePropertyChanged("idProducto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] imagen {
+            get {
+                return this.imagenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imagenField, value) != true)) {
+                    this.imagenField = value;
+                    this.RaisePropertyChanged("imagen");
                 }
             }
         }
@@ -362,6 +394,9 @@ namespace ClienteASP.Oferta {
         private string direccionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string emailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nivelAccesoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -415,6 +450,19 @@ namespace ClienteASP.Oferta {
                 if ((object.ReferenceEquals(this.direccionField, value) != true)) {
                     this.direccionField = value;
                     this.RaisePropertyChanged("direccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
                 }
             }
         }
@@ -477,6 +525,12 @@ namespace ClienteASP.Oferta {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOferta/VerMisOfertas", ReplyAction="http://tempuri.org/IOferta/VerMisOfertasResponse")]
         ClienteASP.Oferta.ModeloOferta[] VerMisOfertas(string nombreUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOferta/VerOfertasDelProducto", ReplyAction="http://tempuri.org/IOferta/VerOfertasDelProductoResponse")]
+        ClienteASP.Oferta.ModeloOferta[] VerOfertasDelProducto(double idProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOferta/EscogerEstasOfertas", ReplyAction="http://tempuri.org/IOferta/EscogerEstasOfertasResponse")]
+        void EscogerEstasOfertas(ClienteASP.Oferta.ModeloOferta[] ofertasGanadoras, ClienteASP.Oferta.ModeloOferta[] ofertasPerdedoras);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -512,6 +566,14 @@ namespace ClienteASP.Oferta {
         
         public ClienteASP.Oferta.ModeloOferta[] VerMisOfertas(string nombreUsuario) {
             return base.Channel.VerMisOfertas(nombreUsuario);
+        }
+        
+        public ClienteASP.Oferta.ModeloOferta[] VerOfertasDelProducto(double idProducto) {
+            return base.Channel.VerOfertasDelProducto(idProducto);
+        }
+        
+        public void EscogerEstasOfertas(ClienteASP.Oferta.ModeloOferta[] ofertasGanadoras, ClienteASP.Oferta.ModeloOferta[] ofertasPerdedoras) {
+            base.Channel.EscogerEstasOfertas(ofertasGanadoras, ofertasPerdedoras);
         }
     }
 }

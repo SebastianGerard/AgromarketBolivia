@@ -19,6 +19,18 @@
   <wsdl:message name="IOferta_VerMisOfertas_OutputMessage">
     <wsdl:part name="parameters" element="tns:VerMisOfertasResponse" />
   </wsdl:message>
+  <wsdl:message name="IOferta_VerOfertasDelProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerOfertasDelProducto" />
+  </wsdl:message>
+  <wsdl:message name="IOferta_VerOfertasDelProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerOfertasDelProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOferta_EscogerEstasOfertas_InputMessage">
+    <wsdl:part name="parameters" element="tns:EscogerEstasOfertas" />
+  </wsdl:message>
+  <wsdl:message name="IOferta_EscogerEstasOfertas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EscogerEstasOfertasResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOferta">
     <wsdl:operation name="OfrecerOferta">
       <wsdl:input wsaw:Action="http://tempuri.org/IOferta/OfrecerOferta" message="tns:IOferta_OfrecerOferta_InputMessage" />
@@ -27,6 +39,14 @@
     <wsdl:operation name="VerMisOfertas">
       <wsdl:input wsaw:Action="http://tempuri.org/IOferta/VerMisOfertas" message="tns:IOferta_VerMisOfertas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOferta/VerMisOfertasResponse" message="tns:IOferta_VerMisOfertas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerOfertasDelProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOferta/VerOfertasDelProducto" message="tns:IOferta_VerOfertasDelProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOferta/VerOfertasDelProductoResponse" message="tns:IOferta_VerOfertasDelProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EscogerEstasOfertas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOferta/EscogerEstasOfertas" message="tns:IOferta_EscogerEstasOfertas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOferta/EscogerEstasOfertasResponse" message="tns:IOferta_EscogerEstasOfertas_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IOferta" type="tns:IOferta">
@@ -42,6 +62,24 @@
     </wsdl:operation>
     <wsdl:operation name="VerMisOfertas">
       <soap:operation soapAction="http://tempuri.org/IOferta/VerMisOfertas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerOfertasDelProducto">
+      <soap:operation soapAction="http://tempuri.org/IOferta/VerOfertasDelProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EscogerEstasOfertas">
+      <soap:operation soapAction="http://tempuri.org/IOferta/EscogerEstasOfertas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

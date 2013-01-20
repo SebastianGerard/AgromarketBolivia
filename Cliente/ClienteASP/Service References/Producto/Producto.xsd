@@ -27,4 +27,50 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="registrarproducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cantidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="unidad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="detalle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechavencimientooferta" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombreusuariodueno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imagen" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registrarproductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="registrarproductoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarproducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idproducto" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarproductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarproductoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProductosNoEvaluados">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProductosNoEvaluadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ModeloWCF" minOccurs="0" name="ObtenerProductosNoEvaluadosResult" nillable="true" type="q3:ArrayOfModeloProducto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -12,13 +12,15 @@ namespace ServicioWCF
 {
     public class Usuario : IUsuario
     {
-        public bool Login(string nombreUsuario, string contrasena)
+        public ModeloUsuario Login(string nombreUsuario, string contrasena)
         {
             try
             {
                 //TODO acceso a BaseDatos Consultando si es correcto o no.
                 ModeloUsuario modeloUsuario = BaseDatosUsuario.ObtenerUsuario(nombreUsuario);
-                return (modeloUsuario.contrasena == contrasena) && (modeloUsuario.nombreUsuario == nombreUsuario);
+                if (modeloUsuario == null)
+                    throw new Exception("Nombre de usuario o contraseña inválidas");
+                return modeloUsuario;
             }
             catch (Exception ex)
             {

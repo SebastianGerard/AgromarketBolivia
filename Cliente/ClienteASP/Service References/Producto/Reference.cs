@@ -32,6 +32,9 @@ namespace ClienteASP.Producto {
         private string detalleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool evaluadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime fechaOfertaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -39,6 +42,9 @@ namespace ClienteASP.Producto {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double idProductoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] imagenField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nombreField;
@@ -96,6 +102,19 @@ namespace ClienteASP.Producto {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool evaluado {
+            get {
+                return this.evaluadoField;
+            }
+            set {
+                if ((this.evaluadoField.Equals(value) != true)) {
+                    this.evaluadoField = value;
+                    this.RaisePropertyChanged("evaluado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime fechaOferta {
             get {
                 return this.fechaOfertaField;
@@ -130,6 +149,19 @@ namespace ClienteASP.Producto {
                 if ((this.idProductoField.Equals(value) != true)) {
                     this.idProductoField = value;
                     this.RaisePropertyChanged("idProducto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] imagen {
+            get {
+                return this.imagenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imagenField, value) != true)) {
+                    this.imagenField = value;
+                    this.RaisePropertyChanged("imagen");
                 }
             }
         }
@@ -189,6 +221,9 @@ namespace ClienteASP.Producto {
         private string direccionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string emailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nivelAccesoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -242,6 +277,19 @@ namespace ClienteASP.Producto {
                 if ((object.ReferenceEquals(this.direccionField, value) != true)) {
                     this.direccionField = value;
                     this.RaisePropertyChanged("direccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.emailField, value) != true)) {
+                    this.emailField = value;
+                    this.RaisePropertyChanged("email");
                 }
             }
         }
@@ -304,6 +352,15 @@ namespace ClienteASP.Producto {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/ObtenerProductosConElNombre", ReplyAction="http://tempuri.org/IProducto/ObtenerProductosConElNombreResponse")]
         ClienteASP.Producto.ModeloProducto[] ObtenerProductosConElNombre(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/registrarproducto", ReplyAction="http://tempuri.org/IProducto/registrarproductoResponse")]
+        bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno, byte[] imagen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/eliminarproducto", ReplyAction="http://tempuri.org/IProducto/eliminarproductoResponse")]
+        bool eliminarproducto(string idproducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProducto/ObtenerProductosNoEvaluados", ReplyAction="http://tempuri.org/IProducto/ObtenerProductosNoEvaluadosResponse")]
+        ClienteASP.Producto.ModeloProducto[] ObtenerProductosNoEvaluados();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -339,6 +396,18 @@ namespace ClienteASP.Producto {
         
         public ClienteASP.Producto.ModeloProducto[] ObtenerProductosConElNombre(string nombre) {
             return base.Channel.ObtenerProductosConElNombre(nombre);
+        }
+        
+        public bool registrarproducto(string nombre, string cantidad, string unidad, string detalle, string fechavencimientooferta, string nombreusuariodueno, byte[] imagen) {
+            return base.Channel.registrarproducto(nombre, cantidad, unidad, detalle, fechavencimientooferta, nombreusuariodueno, imagen);
+        }
+        
+        public bool eliminarproducto(string idproducto) {
+            return base.Channel.eliminarproducto(idproducto);
+        }
+        
+        public ClienteASP.Producto.ModeloProducto[] ObtenerProductosNoEvaluados() {
+            return base.Channel.ObtenerProductosNoEvaluados();
         }
     }
 }

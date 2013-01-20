@@ -19,6 +19,24 @@
   <wsdl:message name="IProducto_ObtenerProductosConElNombre_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerProductosConElNombreResponse" />
   </wsdl:message>
+  <wsdl:message name="IProducto_registrarproducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:registrarproducto" />
+  </wsdl:message>
+  <wsdl:message name="IProducto_registrarproducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registrarproductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProducto_eliminarproducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarproducto" />
+  </wsdl:message>
+  <wsdl:message name="IProducto_eliminarproducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarproductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProducto_ObtenerProductosNoEvaluados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductosNoEvaluados" />
+  </wsdl:message>
+  <wsdl:message name="IProducto_ObtenerProductosNoEvaluados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductosNoEvaluadosResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProducto">
     <wsdl:operation name="ObtenerTodosProductos">
       <wsdl:input wsaw:Action="http://tempuri.org/IProducto/ObtenerTodosProductos" message="tns:IProducto_ObtenerTodosProductos_InputMessage" />
@@ -27,6 +45,18 @@
     <wsdl:operation name="ObtenerProductosConElNombre">
       <wsdl:input wsaw:Action="http://tempuri.org/IProducto/ObtenerProductosConElNombre" message="tns:IProducto_ObtenerProductosConElNombre_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProducto/ObtenerProductosConElNombreResponse" message="tns:IProducto_ObtenerProductosConElNombre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarproducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProducto/registrarproducto" message="tns:IProducto_registrarproducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProducto/registrarproductoResponse" message="tns:IProducto_registrarproducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarproducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProducto/eliminarproducto" message="tns:IProducto_eliminarproducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProducto/eliminarproductoResponse" message="tns:IProducto_eliminarproducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductosNoEvaluados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProducto/ObtenerProductosNoEvaluados" message="tns:IProducto_ObtenerProductosNoEvaluados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProducto/ObtenerProductosNoEvaluadosResponse" message="tns:IProducto_ObtenerProductosNoEvaluados_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProducto" type="tns:IProducto">
@@ -42,6 +72,33 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerProductosConElNombre">
       <soap:operation soapAction="http://tempuri.org/IProducto/ObtenerProductosConElNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registrarproducto">
+      <soap:operation soapAction="http://tempuri.org/IProducto/registrarproducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarproducto">
+      <soap:operation soapAction="http://tempuri.org/IProducto/eliminarproducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProductosNoEvaluados">
+      <soap:operation soapAction="http://tempuri.org/IProducto/ObtenerProductosNoEvaluados" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

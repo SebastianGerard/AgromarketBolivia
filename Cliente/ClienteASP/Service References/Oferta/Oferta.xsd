@@ -25,9 +25,11 @@
       <xs:element minOccurs="0" name="Usuario" nillable="true" type="tns:ModeloUsuario" />
       <xs:element minOccurs="0" name="cantidad" type="xs:float" />
       <xs:element minOccurs="0" name="detalle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="evaluado" type="xs:boolean" />
       <xs:element minOccurs="0" name="fechaOferta" type="xs:dateTime" />
       <xs:element minOccurs="0" name="fechaVencimientoOferta" type="xs:dateTime" />
       <xs:element minOccurs="0" name="idProducto" type="xs:double" />
+      <xs:element minOccurs="0" name="imagen" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="unidad" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -38,6 +40,7 @@
       <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="contrasena" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="nivelAcceso" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />

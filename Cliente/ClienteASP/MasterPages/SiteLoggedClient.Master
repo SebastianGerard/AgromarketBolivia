@@ -39,6 +39,10 @@
                     </Items>
                 </asp:Menu>
             </div>
+            <div style="text-align: right">
+                <asp:LinkButton ID="LinkButtonLogOut" runat="server" ForeColor="White" 
+                    onclick="LinkButtonLogOut_Click">LogOut</asp:LinkButton>
+            </div>
         </div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

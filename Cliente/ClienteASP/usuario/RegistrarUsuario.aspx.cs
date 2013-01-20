@@ -10,7 +10,6 @@ namespace ClienteASP.usuario
 {
     public partial class RegistrarUsuario : System.Web.UI.Page
     {
-
         public void resetearLabelErrores()
         {
             LabelError.Text = "";

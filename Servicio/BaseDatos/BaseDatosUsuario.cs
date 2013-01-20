@@ -14,13 +14,14 @@ namespace BaseDatos
         {
             try
             {
-                ModeloUsuario usuario = new ModeloUsuario();
+                ModeloUsuario usuario = null;
                 NpgsqlCommand cmd = new NpgsqlCommand("Select * from usuario where nombreusuario = @nombre", Conexion.conexion);
                 cmd.Parameters.Add("nombre",nombreUsuario);
                 Conexion.abrirConexion();
                 NpgsqlDataReader reader = cmd.ExecuteReader();
                 if(reader.Read())
                 {
+                    usuario = new ModeloUsuario();
                     usuario.nombreUsuario = reader["nombreusuario"].ToString();
                     usuario.contrasena = reader["contrasena"].ToString();
                     usuario.apellido = reader["apellido"].ToString();

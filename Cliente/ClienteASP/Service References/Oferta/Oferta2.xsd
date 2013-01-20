@@ -31,4 +31,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="VerOfertasDelProducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idProducto" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerOfertasDelProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ModeloWCF" minOccurs="0" name="VerOfertasDelProductoResult" nillable="true" type="q2:ArrayOfModeloOferta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EscogerEstasOfertas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ModeloWCF" minOccurs="0" name="ofertasGanadoras" nillable="true" type="q3:ArrayOfModeloOferta" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ModeloWCF" minOccurs="0" name="ofertasPerdedoras" nillable="true" type="q4:ArrayOfModeloOferta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EscogerEstasOfertasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

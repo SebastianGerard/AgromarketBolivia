@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ModeloWCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ModeloWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfModeloUsuario">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModeloUsuario" nillable="true" type="tns:ModeloUsuario" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfModeloUsuario" nillable="true" type="tns:ArrayOfModeloUsuario" />
   <xs:complexType name="ModeloUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="apellido" nillable="true" type="xs:string" />
@@ -18,4 +12,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ModeloUsuario" nillable="true" type="tns:ModeloUsuario" />
+  <xs:complexType name="ArrayOfModeloUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModeloUsuario" nillable="true" type="tns:ModeloUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModeloUsuario" nillable="true" type="tns:ArrayOfModeloUsuario" />
 </xs:schema>

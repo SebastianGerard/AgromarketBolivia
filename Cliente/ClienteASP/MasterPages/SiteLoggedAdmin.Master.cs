@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
 
 namespace ClienteASP.MasterPages
 {
@@ -12,6 +13,13 @@ namespace ClienteASP.MasterPages
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void LinkButtonLogOut_Click(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            Session["Usuario"] = null;
+            Session["MasterPage"] = "~/MasterPages/Site.Master";
         }
     }
 }

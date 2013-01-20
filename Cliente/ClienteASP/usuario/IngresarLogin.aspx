@@ -3,29 +3,27 @@
     <style type="text/css">
     .style1
     {
-        text-align: right;
-    }
-</style>
+            text-align: right;
+            width: 307px;
+        }
+        .style6
+        {
+            width: 307px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <table style="width:100%;">
+        
         <tr>
             <td class="style1">
-                <asp:Label ID="Label1" runat="server" Text="Nombre de Usuario:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="TextBoxUsuario" runat="server"></asp:TextBox>
-                <asp:Label ID="LabelError" runat="server" ForeColor="Red"></asp:Label>
-            </td>
-            <td>
                 &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style1">
-                <asp:Label ID="Label2" runat="server" Text="Contrasena:"></asp:Label>
-            </td>
             <td>
-                <asp:TextBox ID="TextBoxContrasena" runat="server"></asp:TextBox>
+                <asp:Login ID="Login1" runat="server" onauthenticate="Login1_Authenticate" 
+                LoginButtonText="Entrar" PasswordLabelText="Contraseña:" 
+                RememberMeText="Remember me next time." TitleText=""
+                UserNameLabelText="Nombre de usuario:" Width="264px" >
+                </asp:Login>
             </td>
             <td>
                 &nbsp;</td>
@@ -34,14 +32,12 @@
             <td class="style1">
                 &nbsp;</td>
             <td>
-                <asp:Button ID="ButtonIngresar" runat="server" Text="Ingresar" 
-                    onclick="ButtonIngresar_Click" />
-            </td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td >
+            <td class="style6" >
                 </td>
             <td>
                 
