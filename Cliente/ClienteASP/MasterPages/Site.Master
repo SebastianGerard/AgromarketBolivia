@@ -13,6 +13,11 @@
          {
              text-align: right;
          }
+         .style1
+         {
+             height: 404px;
+             width: 956px;
+         }
      </style>
 </head>
 <body>
@@ -21,10 +26,10 @@
         <div class="header">
             <div>
                 
-                
+                <img alt="lol" class="style1" src="/Imagenes/Fondo.jpg" />
                 
             </div>
-            <div class="menu" style="color: #3B67B2">
+            <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Inicio"/>

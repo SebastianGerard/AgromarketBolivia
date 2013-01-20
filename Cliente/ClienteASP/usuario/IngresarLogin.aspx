@@ -6,9 +6,9 @@
             text-align: right;
             width: 307px;
         }
-        .style6
+        .style8
         {
-            width: 307px;
+            width: 405px;
         }
     </style>
 </asp:Content>
@@ -16,28 +16,29 @@
     <table style="width:100%;">
         
         <tr>
-            <td class="style1">
-                &nbsp;</td>
+            <td class="style8">
+                </td>
             <td>
                 <asp:Login ID="Login1" runat="server" onauthenticate="Login1_Authenticate" 
                 LoginButtonText="Entrar" PasswordLabelText="Contraseña:" 
                 RememberMeText="Remember me next time." TitleText=""
-                UserNameLabelText="Nombre de usuario:" Width="264px" >
+                UserNameLabelText="Nombre de usuario:" Width="264px" BorderColor="Black" 
+                    style="text-align: center">
                 </asp:Login>
             </td>
             <td>
-                &nbsp;</td>
+                </td>
         </tr>
         <tr>
-            <td class="style1">
-                &nbsp;</td>
+            <td class="style8" >
+                </td>
             <td>
-                &nbsp;</td>
+                </td>
             <td>
-                &nbsp;</td>
+                </td>
         </tr>
         <tr>
-            <td class="style6" >
+            <td class="style8">
                 </td>
             <td>
                 

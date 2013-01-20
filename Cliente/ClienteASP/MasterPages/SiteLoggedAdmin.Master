@@ -8,17 +8,22 @@
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+     <style type="text/css">
+         .style1
+         {
+              height: 404px;
+             width: 956px;
+         }
+     </style>
      </head>
-<body>
+<body background="../Imagenes/Fondo2.jpg">
     <form id="Form1" runat="server">
     <div class="page">
         <div class="header">
             <div>
-                
-                
-                
+                <img alt="lol" class="style1" src="/Imagenes/Fondo.jpg" />
             </div>
-            <div class="menu" style="color: #3B67B2">
+            <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Inicio"/>
@@ -38,7 +43,7 @@
                     </Items>
                 </asp:Menu>
             </div>
-            <div style="text-align: right">
+            <div class="clear hideSkiplink" style="text-align: right">
                 <asp:LinkButton ID="LinkButtonLogOut" runat="server" ForeColor="White" 
                     onclick="LinkButtonLogOut_Click">LogOut</asp:LinkButton>
             </div>

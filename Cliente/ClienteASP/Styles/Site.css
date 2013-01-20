@@ -3,28 +3,27 @@
 
 body   
 {
-    background: #b6b7bc;
-    font-size: .80em;
-    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    background-image: url('/Imagenes/Fondo2.jpg');
+    background-attachment: fixed; font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
     padding: 0px;
-    color: #696969;
+    text-align: left;
 }
 
 a:link, a:visited
 {
-    color: #034af3;
+    color: #FFFFFF;
 }
 
 a:hover
 {
-    color: #1d60ff;
+    color: #999999;
     text-decoration: none;
 }
 
 a:active
 {
-    color: #034af3;
+    color: #FFFFFF;
 }
 
 p
@@ -40,7 +39,7 @@ p
 h1, h2, h3, h4, h5, h6
 {
     font-size: 1.5em;
-    color: #666666;
+    color: #999999;
     font-variant: small-caps;
     text-transform: none;
     font-weight: 200;
@@ -89,7 +88,7 @@ first child of the left and right table columns */
 .page
 {
     width: 960px;
-    background-color: #fff;
+    background-color: #666666;
     margin: 20px auto 0px auto;
     border: 1px solid #496077;
 }
@@ -99,7 +98,7 @@ first child of the left and right table columns */
     position: relative;
     margin: 0px;
     padding: 0px;
-    background: #4b6c9e;
+    background: ##AA2130;
     width: 100%;
 }
 
@@ -144,7 +143,7 @@ first child of the left and right table columns */
 
 div.hideSkiplink
 {
-    background-color:#3a4f63;
+    background-color:#202020;
     width:100%;
 }
 
@@ -163,7 +162,7 @@ div.menu ul
 
 div.menu ul li a, div.menu ul li a:visited
 {
-    background-color: #465c71;
+    background-color: #202020;
     border: 1px #4e667d solid;
     color: #dde4ec;
     display: block;
@@ -175,14 +174,14 @@ div.menu ul li a, div.menu ul li a:visited
 
 div.menu ul li a:hover
 {
-    background-color: #bfcbd6;
+    background-color: #333333;
     color: #465c71;
     text-decoration: none;
 }
 
 div.menu ul li a:active
 {
-    background-color: #465c71;
+    background-color: #202020;
     color: #cfdbe6;
     text-decoration: none;
 }

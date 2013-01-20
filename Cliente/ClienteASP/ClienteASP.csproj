@@ -58,6 +58,8 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Imagenes\Fondo.jpg" />
+    <Content Include="Imagenes\Fondo2.jpg" />
     <Content Include="MasterPages\Site.Master" />
     <Content Include="MasterPages\SiteLoggedAdmin.Master" />
     <Content Include="MasterPages\SiteLoggedClient.Master" />
@@ -235,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
