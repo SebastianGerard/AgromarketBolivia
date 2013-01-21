@@ -30,6 +30,24 @@ namespace ServicioWCF
             
         }
 
+        public ModeloUsuario buscarPorNombreusuario(string nombreUsuario)
+        {
+            try
+            {
+                //TODO acceso a BaseDatos Consultando si es correcto o no.
+                ModeloUsuario modeloUsuario = BaseDatosUsuario.ObtenerUsuario(nombreUsuario);
+                if (modeloUsuario == null)
+                    throw new Exception("Nombre de usuario o contraseña inválidas");
+                return modeloUsuario;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
         public bool buscarUsuarioPorNombreUsuario(string nombreUsuario)
         {
             try
@@ -40,6 +58,26 @@ namespace ServicioWCF
                         throw new Exception("No se encontró ningún usuario");
                     return (modeloUsuario.nombreUsuario == nombreUsuario);
                 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        public bool buscarUsuarioPorNombreUsuario1(string nombreUsuario)
+        {
+            try
+            {
+                //TODO acceso a BaseDatos Consultando si es correcto o no.
+                ModeloUsuario modeloUsuario = BaseDatosUsuario.ObtenerUsuario(nombreUsuario);
+                if (modeloUsuario == null)
+                    return false;
+                else
+                    return true;                
+
             }
             catch (Exception ex)
             {
@@ -102,7 +140,7 @@ namespace ServicioWCF
             
                 try
                 {
-                    if (this.buscarUsuarioPorNombreUsuario(nombreusuario))
+                    if (this.buscarUsuarioPorNombreUsuario1(nombreusuario))
                         throw new Exception("El nombre de usuario ya existe");                    
                     return BaseDatosUsuario.registrarUsuario(nombre, apellido, direccion, nombreusuario, contrasena, nivelacceso, email);
 
@@ -114,6 +152,20 @@ namespace ServicioWCF
                 }
             
 
+        }
+        public bool ModificarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string email)
+        {
+            try
+            {
+               
+                return BaseDatosUsuario.ModificarUsuario(nombre, apellido, direccion, nombreusuario, email);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            } 
         }
        
 

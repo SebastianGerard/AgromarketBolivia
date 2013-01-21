@@ -39,8 +39,8 @@
                             NavigateUrl="~/producto/VerProductosPendientes.aspx">
                         </asp:MenuItem>
                         <asp:MenuItem Text="Administracion de cuentas" Value="Cuenta">
-                            <asp:MenuItem Text="Ver mi perfil" Value="Ver mi perfil"></asp:MenuItem>
-                            <asp:MenuItem Text="Editar mi perfil" Value="Editar mi perfil"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/usuario/VerPerfil.aspx" Text="Ver mi perfil" ></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/usuario/ModificarUsuario.aspx" Text="Editar mi perfil"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/usuario/BuscarUsuario.aspx" Text="Buscar usuario" 
                                 Value="Buscar usuario"></asp:MenuItem>
                         </asp:MenuItem>

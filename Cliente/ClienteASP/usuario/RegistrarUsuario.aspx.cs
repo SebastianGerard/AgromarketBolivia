@@ -23,35 +23,35 @@ namespace ClienteASP.usuario
         public bool validarCampos()
         {
             bool respuesta = false;
-            if (TextBoxUsuario.Text.Length < 5)
+            if (TextBoxUsuario.Text.Length <= 3)
             {
                 respuesta = true;
-                LabelError.Text = "El nombre es muy corto";
+                LabelError.Text = "El nombre es muy corto, debe ser mas de 2 caracteres";
             }
-            if (TextBoxApellido.Text.Length < 5)
+            if (TextBoxApellido.Text.Length <= 3)
             {
                 respuesta = true;
-                LabelErrorApellido.Text = "El apellido es muy corto";
+                LabelErrorApellido.Text = "El apellido es muy corto , debe ser mas de 2 caracteres";
             }
-            if (TextBoxDireccion.Text.Length < 7)
+            if (TextBoxDireccion.Text.Length <= 5)
             {
                 respuesta = true;
-                LabelErrorDireccion.Text = "La direccion es muy corta";
+                LabelErrorDireccion.Text = "La direccion es muy corta, debe ser mas de 5 caracteres";
             }
-            if (TextBoxNombreUsuario.Text.Length < 5)
+            if (TextBoxNombreUsuario.Text.Length <= 5)
             {
                 respuesta = true;
-                LabelErrorNombreUsuario.Text = "El nombre es muy corto";
+                LabelErrorNombreUsuario.Text = "El nombre es muy corto, debe ser mas de 5 caracteres";
             }
-            if(TextBoxContrasena.Text.Length < 6)
+            if(TextBoxContrasena.Text.Length <= 6)
             {
                 respuesta = true;
-                LabelErrorContasena.Text = "Debe ser de 6 caracteres";
+                LabelErrorContasena.Text = "Debe ser de 6 caracteres, debe ser mas de 6 caracteres";
             }
-            if (TextBoxEmail.Text.Length < 5)
+            if (TextBoxEmail.Text.Length <= 5)
             {
                 respuesta = true;
-                LabelErrorEmail.Text = "El email es muy corto";
+                LabelErrorEmail.Text = "El email es muy corto, debe ser mas de 5 caracteres";
             }
 
             return respuesta;
@@ -73,7 +73,7 @@ namespace ClienteASP.usuario
                     {
                         try
                         {
-                            if (usuario.insertarUsuario(TextBoxUsuario.Text, TextBoxApellido.Text, TextBoxDireccion.Text, TextBoxNombreUsuario.Text, TextBoxContrasena.Text, "admin", TextBoxEmail.Text))
+                            if (usuario.insertarUsuario(TextBoxUsuario.Text, TextBoxApellido.Text, TextBoxDireccion.Text, TextBoxNombreUsuario.Text, TextBoxContrasena.Text, "Cliente", TextBoxEmail.Text))
                             {
 
                                 Server.Transfer("~/usuario/IngresarLogin.aspx", true);

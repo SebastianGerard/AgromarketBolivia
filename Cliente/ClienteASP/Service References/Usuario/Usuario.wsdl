@@ -43,6 +43,18 @@
   <wsdl:message name="IUsuario_buscarUsuarioPorNombreUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:buscarUsuarioPorNombreUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IUsuario_ModificarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuario_ModificarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsuario_buscarPorNombreusuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarPorNombreusuario" />
+  </wsdl:message>
+  <wsdl:message name="IUsuario_buscarPorNombreusuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarPorNombreusuarioResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUsuario">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsuario/Login" message="tns:IUsuario_Login_InputMessage" />
@@ -67,6 +79,14 @@
     <wsdl:operation name="buscarUsuarioPorNombreUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsuario/buscarUsuarioPorNombreUsuario" message="tns:IUsuario_buscarUsuarioPorNombreUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsuario/buscarUsuarioPorNombreUsuarioResponse" message="tns:IUsuario_buscarUsuarioPorNombreUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuario/ModificarUsuario" message="tns:IUsuario_ModificarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuario/ModificarUsuarioResponse" message="tns:IUsuario_ModificarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPorNombreusuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsuario/buscarPorNombreusuario" message="tns:IUsuario_buscarPorNombreusuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsuario/buscarPorNombreusuarioResponse" message="tns:IUsuario_buscarPorNombreusuario_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUsuario" type="tns:IUsuario">
@@ -118,6 +138,24 @@
     </wsdl:operation>
     <wsdl:operation name="buscarUsuarioPorNombreUsuario">
       <soap:operation soapAction="http://tempuri.org/IUsuario/buscarUsuarioPorNombreUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuario/ModificarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPorNombreusuario">
+      <soap:operation soapAction="http://tempuri.org/IUsuario/buscarPorNombreusuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
