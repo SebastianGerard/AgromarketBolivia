@@ -21,10 +21,10 @@
     <MetadataSource Address="http://localhost:4367/Usuario.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="Usuario1.xsd" MetadataType="Schema" ID="d8b8aa81-062c-42f9-8f81-6564a54b386b" SourceId="1" SourceUrl="http://localhost:4367/Usuario.svc?xsd=xsd0" />
     <MetadataFile FileName="Usuario2.xsd" MetadataType="Schema" ID="92a45481-48bf-45b3-a6fa-566b4919e49d" SourceId="1" SourceUrl="http://localhost:4367/Usuario.svc?xsd=xsd2" />
     <MetadataFile FileName="Usuario.xsd" MetadataType="Schema" ID="0ab5c47a-f888-4ac8-906d-4288ce405902" SourceId="1" SourceUrl="http://localhost:4367/Usuario.svc?xsd=xsd1" />
     <MetadataFile FileName="Usuario.wsdl" MetadataType="Wsdl" ID="542ecf56-ad73-4d83-b79e-c37b2bb40bd7" SourceId="1" SourceUrl="http://localhost:4367/Usuario.svc?wsdl" />
-    <MetadataFile FileName="Usuario1.xsd" MetadataType="Schema" ID="d8b8aa81-062c-42f9-8f81-6564a54b386b" SourceId="1" SourceUrl="http://localhost:4367/Usuario.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

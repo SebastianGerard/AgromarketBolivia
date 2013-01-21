@@ -5,6 +5,7 @@ using System.Text;
 using ModeloWCF;
 using Npgsql;
 using Mono.Security;
+using Utilidad;
 namespace BaseDatos
 {
     public static class BaseDatosUsuario
@@ -145,6 +146,7 @@ namespace BaseDatos
 
         public static bool registrarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email)
         {
+            
             try 
             {
                 NpgsqlCommand cmd = new NpgsqlCommand("Insert into usuario values(@nombre,@apellido,@direccion,@nombreusuario,@contrasena,@nivelacceso,@email)", Conexion.conexion);
@@ -152,7 +154,7 @@ namespace BaseDatos
                 cmd.Parameters.Add("apellido", apellido);
                 cmd.Parameters.Add("direccion", direccion);
                 cmd.Parameters.Add("nombreusuario", nombreusuario);
-                cmd.Parameters.Add("contrasena", contrasena);
+                cmd.Parameters.Add("contrasena",Utilidades.EncriptorAES.Encriptar(contrasena));
                 cmd.Parameters.Add("nivelacceso", nivelacceso);
                 cmd.Parameters.Add("email", email);
                 Conexion.abrirConexion();
