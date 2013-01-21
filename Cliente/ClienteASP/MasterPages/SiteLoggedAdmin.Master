@@ -35,7 +35,8 @@
                                 NavigateUrl="~/producto/VerProductos.aspx"></asp:MenuItem>
                             
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Evaluar" Value="Evaluar">
+                        <asp:MenuItem Text="Evaluar" Value="Evaluar" 
+                            NavigateUrl="~/producto/VerProductosPendientes.aspx">
                         </asp:MenuItem>
                         <asp:MenuItem Text="Administracion de cuentas" Value="Cuenta">
                             <asp:MenuItem Text="Ver mi perfil" Value="Ver mi perfil"></asp:MenuItem>

@@ -137,7 +137,7 @@ namespace BaseDatos
         {
             try
             {
-                NpgsqlCommand cmd = new NpgsqlCommand("Update oferta set vencida='true' where idoferta=@idoferta");
+                NpgsqlCommand cmd = new NpgsqlCommand("Update oferta set vencida='true' where idoferta=@idoferta",Conexion.conexion);
                 cmd.Parameters.Add("idoferta",oferta.idOferta);
                 Conexion.abrirConexion();
                 cmd.ExecuteNonQuery();

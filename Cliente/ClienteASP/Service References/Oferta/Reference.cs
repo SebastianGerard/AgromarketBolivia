@@ -527,7 +527,7 @@ namespace ClienteASP.Oferta {
         ClienteASP.Oferta.ModeloOferta[] VerMisOfertas(string nombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOferta/VerOfertasDelProducto", ReplyAction="http://tempuri.org/IOferta/VerOfertasDelProductoResponse")]
-        ClienteASP.Oferta.ModeloOferta[] VerOfertasDelProducto(double idProducto);
+        ClienteASP.Oferta.ModeloOferta[] VerOfertasDelProducto(string idProducto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOferta/EscogerEstasOfertas", ReplyAction="http://tempuri.org/IOferta/EscogerEstasOfertasResponse")]
         void EscogerEstasOfertas(ClienteASP.Oferta.ModeloOferta[] ofertasGanadoras, ClienteASP.Oferta.ModeloOferta[] ofertasPerdedoras);
@@ -568,7 +568,7 @@ namespace ClienteASP.Oferta {
             return base.Channel.VerMisOfertas(nombreUsuario);
         }
         
-        public ClienteASP.Oferta.ModeloOferta[] VerOfertasDelProducto(double idProducto) {
+        public ClienteASP.Oferta.ModeloOferta[] VerOfertasDelProducto(string idProducto) {
             return base.Channel.VerOfertasDelProducto(idProducto);
         }
         

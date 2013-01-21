@@ -36,7 +36,10 @@ namespace ClienteASP.producto
                 LabelNombre.Text= producto.nombre;
                 LabelMedida.Text = producto.unidad;
                 LabelUsuario.Text = producto.Usuario.nombre;
+                if (modeloUsuario.nivelAcceso == "Administrador")
+                    ButtonOfertar.Visible = false;
             }
+
             catch (Exception ex)
             {
                 LabelError.Text = ex.Message;

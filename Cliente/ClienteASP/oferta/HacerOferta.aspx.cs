@@ -17,6 +17,7 @@ namespace ClienteASP.Oferta
                 ClienteASP.Usuario.ModeloUsuario modeloUsuario = (ClienteASP.Usuario.ModeloUsuario)Session["Usuario"];
                 if (!User.Identity.IsAuthenticated || modeloUsuario == null)
                     FormsAuthentication.RedirectToLoginPage();
+                
                 ClienteASP.Producto.ProductoClient cliente = new Producto.ProductoClient();
                 ClienteASP.Producto.ModeloProducto producto = cliente.ObtenerProductoPorId(Request.QueryString["id"]);
                 if (producto.evaluado == true)

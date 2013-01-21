@@ -186,12 +186,13 @@ namespace BaseDatos
                     {
                         ModeloProducto producto = new ModeloProducto();
                         producto.cantidad = float.Parse(reader["cantidad"].ToString());
-                        producto.detalle = reader["cantidad"].ToString();
+                        producto.detalle = reader["detalle"].ToString();
                         producto.evaluado = (bool)reader["evaluado"];
                         producto.fechaOferta = DateTime.Parse(reader["fechaoferta"].ToString());
                         producto.fechaVencimientoOferta = DateTime.Parse(reader["fechavencimientooferta"].ToString());
                         producto.idProducto = Double.Parse(reader["idproducto"].ToString());
                         producto.unidad = reader["unidad"].ToString();
+                        producto.nombre = reader["nombre"].ToString();
                         producto.Usuario = BaseDatosUsuario.ObtenerUsuario(reader["nombreusuariodueno"].ToString());
                         
                         productos.Add(producto);

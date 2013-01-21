@@ -99,9 +99,11 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="oferta\Evaluar.aspx" />
     <Content Include="oferta\HacerOferta.aspx" />
     <Content Include="oferta\OfertaExitosa.aspx" />
     <Content Include="oferta\VerMisOfertas.aspx" />
+    <Content Include="producto\VerProductosPendientes.aspx" />
     <Content Include="producto\Registrar producto.aspx" />
     <Content Include="producto\RegistroExitoso.aspx" />
     <Content Include="producto\VerProducto.aspx" />
@@ -205,6 +207,13 @@
     <Compile Include="MasterPages\SiteLoggedClient.Master.designer.cs">
       <DependentUpon>SiteLoggedClient.Master</DependentUpon>
     </Compile>
+    <Compile Include="oferta\Evaluar.aspx.cs">
+      <DependentUpon>Evaluar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oferta\Evaluar.aspx.designer.cs">
+      <DependentUpon>Evaluar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="oferta\HacerOferta.aspx.cs">
       <DependentUpon>HacerOferta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,6 +234,13 @@
     </Compile>
     <Compile Include="oferta\VerMisOfertas.aspx.designer.cs">
       <DependentUpon>VerMisOfertas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="producto\VerProductosPendientes.aspx.cs">
+      <DependentUpon>VerProductosPendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="producto\VerProductosPendientes.aspx.designer.cs">
+      <DependentUpon>VerProductosPendientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="producto\Registrar producto.aspx.cs">
       <DependentUpon>Registrar producto.aspx</DependentUpon>
