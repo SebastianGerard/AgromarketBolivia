@@ -8,7 +8,7 @@ namespace BaseDatos
 {
     public static class Conexion
     {
-        public static NpgsqlConnection conexion = new NpgsqlConnection("Server = 127.0.0.1 ; Port=5432; User Id = postgres; Password = Gerard66. ; Database =Agromarket");
+        public static NpgsqlConnection conexion = new NpgsqlConnection("Server = 127.0.0.1 ; Port=5432; User Id = postgres; Password = postgres ; Database =Agromarket");
 
 
         public static void abrirConexion()

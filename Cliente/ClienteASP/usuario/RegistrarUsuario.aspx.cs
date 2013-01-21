@@ -43,7 +43,7 @@ namespace ClienteASP.usuario
                 respuesta = true;
                 LabelErrorNombreUsuario.Text = "El nombre es muy corto, debe ser mas de 5 caracteres";
             }
-            if(TextBoxContrasena.Text.Length <= 6)
+            if(TextBoxContrasena.Text.Length < 6)
             {
                 respuesta = true;
                 LabelErrorContasena.Text = "Debe ser de 6 caracteres, debe ser mas de 6 caracteres";

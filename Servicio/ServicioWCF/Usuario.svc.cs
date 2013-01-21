@@ -18,9 +18,14 @@ namespace ServicioWCF
             {
                 //TODO acceso a BaseDatos Consultando si es correcto o no.
                 ModeloUsuario modeloUsuario = BaseDatosUsuario.ObtenerUsuario(nombreUsuario);
-                if (modeloUsuario == null)
+                if (Utilidades.EncriptorAES.Encriptar(contrasena) != modeloUsuario.contrasena)
+                {
                     throw new Exception("Nombre de usuario o contraseña inválidas");
-                return modeloUsuario;
+                }
+                    if (modeloUsuario == null)
+                        throw new Exception("Nombre de usuario o contraseña inválidas");
+                    return modeloUsuario;
+              
             }
             catch (Exception ex)
             {
