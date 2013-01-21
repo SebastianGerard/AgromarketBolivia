@@ -19,9 +19,11 @@ namespace ClienteASP.oferta
                     FormsAuthentication.RedirectToLoginPage();
                 if (!IsPostBack)
                 {
+                    
                     ClienteASP.Oferta.OfertaClient cliente = new Oferta.OfertaClient();
-                    string id = Request.QueryString["id"];
-                    ClienteASP.Oferta.ModeloOferta[] ofertas = cliente.VerOfertasDelProducto(id);
+                    string id = Request.QueryString["id"]; //Recupero el parámetro id. que recibí desde la anterior página
+                    ClienteASP.Oferta.ModeloOferta[] ofertas = cliente.VerOfertasDelProducto(id); //Recibo las ofertas del producto con ese id
+                    //Las ofertas se desplegan en el datalist
                     DataList1.DataSource = ofertas;
                     DataList1.DataBind();
                 }
@@ -33,6 +35,7 @@ namespace ClienteASP.oferta
             }
             
         }
+        //Método para ver qué master page estoy utilizando 
         protected void Page_PreInit(object sender, EventArgs e)
         {
             if (Session["MasterPage"] != null)
@@ -55,10 +58,11 @@ namespace ClienteASP.oferta
                 int i = 0;
                 int indG = 0;
                 int indP = 0;
+                //Las ofertas seleccionadas se separan de las que no fueron seleccionadas
                 foreach (DataListItem item in DataList1.Items)
                 {
-                    CheckBox ch = (CheckBox)item.FindControl("CheckBox1");
-                    if (ch.Checked == true)
+                    CheckBox ch = (CheckBox)item.FindControl("CheckBox1"); // recupero el control checkbox1
+                    if (ch.Checked == true)//si el check box de esa oferta está tiqueado
                     {
                         ofertasGanadoras[indG] = new Oferta.ModeloOferta();
                         ofertasGanadoras[indG] = ofertas[i];
@@ -72,7 +76,7 @@ namespace ClienteASP.oferta
                     }
                     i++;
                 }
-                cliente.EscogerEstasOfertas(ofertasGanadoras, ofertasPerdedoras);
+                cliente.EscogerEstasOfertas(ofertasGanadoras, ofertasPerdedoras); //Método que llama a escoger ofertas.
             }
             catch (Exception ex)
             {

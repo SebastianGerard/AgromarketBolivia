@@ -21,6 +21,7 @@ namespace ClienteASP.usuario
             {
                 if (!IsPostBack)
                 {
+                    //Se recupera el usuario y se cargan los datos en pantalla
                     usuario = (ModeloUsuario)Session["Usuario"];
                     cargarDatos(usuario);
                 }
@@ -84,6 +85,7 @@ namespace ClienteASP.usuario
                 {
                     try
                     {
+                        //Se llama al método modificar remoto.
                         if (usuario.ModificarUsuario(TextBoxNombre.Text, TextBoxApellido.Text, TextBoxDirec.Text, LabelNombreUsuario.Text, TextBoxEmail.Text))
                         {
 

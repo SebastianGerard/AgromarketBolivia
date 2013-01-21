@@ -17,6 +17,7 @@ namespace ClienteASP.oferta
                 FormsAuthentication.RedirectToLoginPage();
             if (!IsPostBack)
             {
+                //Recupera los productos pendientes que no fueron evaluados utilizando el servicio Producto y los coloca en el datalist
                 ClienteASP.Producto.ProductoClient cliente = new Producto.ProductoClient();
                 ClienteASP.Producto.ModeloProducto[] productos = cliente.ObtenerProductosNoEvaluados();
                 DataList1.DataSource = productos;
@@ -33,7 +34,7 @@ namespace ClienteASP.oferta
         }
 
         
-
+        //Recupera el id del producto y lo manda como parámetro a la ventana de evaluar oferta
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
             if (e.CommandName == "Ver")

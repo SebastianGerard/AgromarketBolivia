@@ -12,6 +12,7 @@ namespace ClienteASP.oferta
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Método para ver si el usuario está logueado o no. 
             ClienteASP.Usuario.ModeloUsuario modeloUsuario = (ClienteASP.Usuario.ModeloUsuario)Session["Usuario"];
             if (!User.Identity.IsAuthenticated || modeloUsuario == null)
                 FormsAuthentication.RedirectToLoginPage();
@@ -19,8 +20,10 @@ namespace ClienteASP.oferta
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
+            //redirecciona a about en caso de que se presione el botón
             Response.Redirect("~/About.aspx");
         }
+        //Método para reconocer qué master page utilizar
         protected void Page_PreInit(object sender, EventArgs e)
         {
             if (Session["MasterPage"] != null)

@@ -16,6 +16,7 @@ namespace ClienteASP.usuario
             ModeloUsuario modeloUsuario = (ModeloUsuario)Session["Usuario"];
             if (!User.Identity.IsAuthenticated || modeloUsuario==null || modeloUsuario.nivelAcceso!="Administrador" )
                 FormsAuthentication.RedirectToLoginPage();
+            //Se recuperan todos los usuarios utilizando un objeto remoto 
             Usuario.UsuarioClient usuario = new Usuario.UsuarioClient();
             
             GridViewUsuario.DataSource = usuario.ObtenerTodosUsuarios();
@@ -39,10 +40,12 @@ namespace ClienteASP.usuario
         {
             try
             {
+                //Se recupera el usuario y se lo muestra en el databind
                 Usuario.UsuarioClient usuario = new Usuario.UsuarioClient();
                 GridViewUsuario.DataSource = usuario.ObtenerUsuariosConElNombre(TextBoxBuscar.Text);
                
                 GridViewUsuario.DataBind();
+                //Las columnas contraseña y nivel de acceso no son visibles
                 GridViewUsuario.Columns[1].Visible = false;
                 GridViewUsuario.Columns[4].Visible = false;
                 

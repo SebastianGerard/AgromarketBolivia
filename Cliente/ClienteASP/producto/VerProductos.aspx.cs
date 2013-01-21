@@ -17,6 +17,7 @@ namespace ClienteASP.producto
                 FormsAuthentication.RedirectToLoginPage();
             if (!IsPostBack)
             {
+                //Recupera los productos utilizando el servicio de Producto y lo coloca en el datalist
                 ClienteASP.Producto.ProductoClient cliente = new Producto.ProductoClient();
                 ClienteASP.Producto.ModeloProducto[] productos = cliente.ObtenerTodosProductos();
                 DataList1.DataSource = productos;
@@ -52,12 +53,15 @@ namespace ClienteASP.producto
                 throw ex;
             }
         }
-
+        //Evento que se lanza cuando un Comando es seleccionado del data list
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
+            //Si el comando es ver
             if (e.CommandName == "Ver")
             {
+                //Almacena el label Label Nro correspondiente a ese item
                 Label label = (Label)e.Item.FindControl("LabelNro");
+                //Se lo pasa a la ventana de verproducto
                 Response.Redirect("VerProducto.aspx?id=" + label.Text);
             }
         }

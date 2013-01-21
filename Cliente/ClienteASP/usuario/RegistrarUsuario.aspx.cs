@@ -73,6 +73,7 @@ namespace ClienteASP.usuario
                     {
                         try
                         {
+                            //Se llama al método remoto insertar usuario que se encargarga de registrarlo en la base de datos
                             if (usuario.insertarUsuario(TextBoxUsuario.Text, TextBoxApellido.Text, TextBoxDireccion.Text, TextBoxNombreUsuario.Text, TextBoxContrasena.Text, "Cliente", TextBoxEmail.Text))
                             {
 

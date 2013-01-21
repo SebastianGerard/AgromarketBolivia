@@ -15,9 +15,11 @@ namespace ClienteASP.producto
             ClienteASP.Usuario.ModeloUsuario modeloUsuario = (ClienteASP.Usuario.ModeloUsuario)Session["Usuario"];
             if (!User.Identity.IsAuthenticated || modeloUsuario == null)
                 FormsAuthentication.RedirectToLoginPage();
-            ClienteASP.Producto.ProductoClient cliente = new Producto.ProductoClient();
+            
             try
             {
+                //Recupera el producto de la base de datos utilizando el servicio de Producto
+                ClienteASP.Producto.ProductoClient cliente = new Producto.ProductoClient();
                 ClienteASP.Producto.ModeloProducto producto = cliente.ObtenerProductoPorId(Request.QueryString["id"]);
                 LabelCantidad.Text = producto.cantidad.ToString();
                 TextBoxDetalle.Text = producto.detalle;
@@ -31,6 +33,7 @@ namespace ClienteASP.producto
                     LabelVigente.Text = "NO";
                     ButtonOfertar.Enabled = false;
                 }
+                //Lo moestra en pantalla
                 LabelFechaOferta.Text= producto.fechaOferta.ToString();
                 LabelVencimiento.Text = producto.fechaVencimientoOferta.ToString();
                 LabelNombre.Text= producto.nombre;

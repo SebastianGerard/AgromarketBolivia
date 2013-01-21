@@ -19,19 +19,23 @@ namespace ClienteASP
         {
             Server.Transfer("~/usuario/RegistrarUsuario.aspx", true);
         }
-
+        //Evento para autenticar al cliente
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             try 
 	        {
+                //Se llama al método remoto Login para ver si los datos son correctos
                 UsuarioClient cliente = new UsuarioClient();
                 ModeloUsuario usuario = cliente.Login(Login1.UserName, Login1.Password);
+                //Definicion de que master page utilizar respecto al nivel de acceso
                 if (usuario.nivelAcceso == "Administrador")
                     Session["MasterPage"] = "~/MasterPages/SiteLoggedAdmin.Master";
                 if (usuario.nivelAcceso == "Cliente")
                     Session["MasterPage"] = "~/MasterPages/SiteLoggedClient.Master";
+                //Usuario autenticado
                 e.Authenticated = true;
                 FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
+                //Se almacena al usuario en una sesión global definida en el archivo Global.asax
                 Session["Usuario"] = usuario;
                 Response.Redirect("~/About.aspx");
 	        }

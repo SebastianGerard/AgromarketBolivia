@@ -11,6 +11,7 @@ namespace BaseDatos
 {
     public static class BaseDatosProducto
     {
+        //Método que devuelve los productos válidos a recibir ofertas
         public static List<ModeloProducto> ObtenerTodosProductos()
         {
             try
@@ -48,6 +49,7 @@ namespace BaseDatos
                 throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
+        //Método que devuelve la cantidad que se ofrece de un producto
         public static float ObtenerCantidadProducto(double idProducto)
         {
             try
@@ -70,6 +72,7 @@ namespace BaseDatos
                 throw ex;
             }
         }
+        //Método que obtiene un determinado producto por su id
         public static ModeloProducto ObtenerProducto(double idProducto)
         {
             try
@@ -102,6 +105,7 @@ namespace BaseDatos
                 throw ex;
             }
         }
+        //Método que devuelve aquellos productos que contengan el nombre recibido y que aún esten abiertos a recibir ofertas
         public static List<ModeloProducto> ObtenerProductosConElNombre(string nombre)
         {
             try
@@ -140,6 +144,7 @@ namespace BaseDatos
                 throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
+        //Registra un nuevo producto
         public static bool registrarProducto(string nombre, string cantidad, string unidad, string fechavencimientooferta, string detalle, string nombreusuariodueno)
         {
             try
@@ -170,7 +175,7 @@ namespace BaseDatos
                 throw new Exception("Hubo un error con la base de datos, intente de nuevo más tarde");
             }
         }
-        //public static bool eliminarproducto()
+        //Retorna todos aquellos productos que no contengan un dueño aún
         public static List<ModeloProducto> ProductosNoEvaluados()
         {
             try
@@ -207,6 +212,7 @@ namespace BaseDatos
                 throw ex;
             }
         }
+        //Cambia el estado de un producto a evaluado que indica que ya tiene un dueño o que una decisión fue tomada respecto a sus ofertas
         public static void CambiarEstadoAEvaluado(double idProducto)
         {
             try

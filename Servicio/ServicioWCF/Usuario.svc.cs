@@ -12,11 +12,13 @@ namespace ServicioWCF
 {
     public class Usuario : IUsuario
     {
+
+        //Metodo que permite el acceso al sistema, devolviendo un usuario en caso de que los datos recibidos coincidan
+        //con los de la base de datos del sistema.
         public ModeloUsuario Login(string nombreUsuario, string contrasena)
         {
             try
             {
-                //TODO acceso a BaseDatos Consultando si es correcto o no.
                 ModeloUsuario modeloUsuario = BaseDatosUsuario.ObtenerUsuario(nombreUsuario);
                 if (modeloUsuario == null)
                     throw new Exception("Nombre de usuario o contraseña inválidas");
@@ -29,7 +31,7 @@ namespace ServicioWCF
             }
             
         }
-
+        //Busca un usuario que contenga el nombre recibido
         public ModeloUsuario buscarPorNombreusuario(string nombreUsuario)
         {
             try
@@ -47,7 +49,7 @@ namespace ServicioWCF
             }
 
         }
-
+        //Método que permite ver si el usuario está en el sistema.
         public bool buscarUsuarioPorNombreUsuario(string nombreUsuario)
         {
             try
@@ -66,8 +68,8 @@ namespace ServicioWCF
             }
 
         }
-
-        public bool buscarUsuarioPorNombreUsuario1(string nombreUsuario)
+        //Método usado internamente
+        private bool buscarUsuarioPorNombreUsuario1(string nombreUsuario)
         {
             try
             {
@@ -86,7 +88,7 @@ namespace ServicioWCF
             }
 
         }
-
+        //Método para obtener todos los usuarios
         public List<ModeloUsuario> ObtenerTodosUsuarios()
         {
             try
@@ -102,7 +104,7 @@ namespace ServicioWCF
                 throw ex;
             }
         }
-
+        //Método para buscar usuarios cuyos nombres coincidan con el recibido
         public List<ModeloUsuario> ObtenerUsuariosConElNombre(string nombre)
         {
             try
@@ -118,7 +120,7 @@ namespace ServicioWCF
                 throw ex;
             }
         }
-
+        //Metodo para buscar usuario cuyos apellidos coincidan con el recibido
         public List<ModeloUsuario> ObtenerUsuariosConElApellido(string apellido)
         {
             try
@@ -134,14 +136,14 @@ namespace ServicioWCF
                 throw ex;
             }
         }
-
+        //Metodo para registrar un usuario.
         public bool insertarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string contrasena, string nivelacceso, string email)
         {
             
                 try
                 {
                     if (this.buscarUsuarioPorNombreUsuario1(nombreusuario))
-                        throw new Exception("El nombre de usuario ya existe");                    
+                        throw new Exception("El nombre de usuario ya existe");                  
                     return BaseDatosUsuario.registrarUsuario(nombre, apellido, direccion, nombreusuario, contrasena, nivelacceso, email);
 
                 }
@@ -153,6 +155,8 @@ namespace ServicioWCF
             
 
         }
+
+        //Médoto para modificar un usuario.
         public bool ModificarUsuario(string nombre, string apellido, string direccion, string nombreusuario, string email)
         {
             try

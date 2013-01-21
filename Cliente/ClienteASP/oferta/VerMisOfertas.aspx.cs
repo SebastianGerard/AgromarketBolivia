@@ -12,11 +12,13 @@ namespace ClienteASP.oferta
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Verifica si el usuario está logueado o no. 
             ClienteASP.Usuario.ModeloUsuario modeloUsuario = (ClienteASP.Usuario.ModeloUsuario)Session["Usuario"];
             if (!User.Identity.IsAuthenticated || modeloUsuario == null)
                 FormsAuthentication.RedirectToLoginPage();
             try
             {
+                //Se obtienen las ofertas del servidor y se las pone en el data list
                 ClienteASP.Oferta.OfertaClient cliente = new Oferta.OfertaClient();
                 ClienteASP.Oferta.ModeloOferta[] oferta = cliente.VerMisOfertas(modeloUsuario.nombreUsuario);
                 DataList1.DataSource = oferta;
@@ -29,6 +31,7 @@ namespace ClienteASP.oferta
             
 
         }
+        //Método para reconocer qué master page utilizar
         protected void Page_PreInit(object sender, EventArgs e)
         {
             if (Session["MasterPage"] != null)

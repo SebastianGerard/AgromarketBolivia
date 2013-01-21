@@ -18,10 +18,12 @@ namespace ClienteASP.producto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Verifica si el usuario está logueado o no. 
             ClienteASP.Usuario.ModeloUsuario modeloUsuario = (ClienteASP.Usuario.ModeloUsuario)Session["Usuario"];
             if (!User.Identity.IsAuthenticated || modeloUsuario == null || modeloUsuario.nivelAcceso != "Cliente")
                 FormsAuthentication.RedirectToLoginPage();
         }
+        //Método para reconocer qué master page utilizar
         protected void Page_PreInit(object sender, EventArgs e)
         {
             if (Session["MasterPage"] != null)
@@ -34,6 +36,7 @@ namespace ClienteASP.producto
         {
             try
             {
+                //Se Registra el Producto mediante un cliente del servicio Producto
                 ProductoClient cliente = new ProductoClient();
                 ClienteASP.Usuario.ModeloUsuario usuario = (ClienteASP.Usuario.ModeloUsuario)Session["Usuario"];
                 cliente.registrarproducto(TextBoxNombre.Text,TextBoxCantidad.Text,TextBoxUnidad.Text,TextBoxDetalle.Text,Calendar1.SelectedDate.ToString(),usuario.nombreUsuario);
@@ -41,7 +44,6 @@ namespace ClienteASP.producto
             }
             catch (Exception ex)
             {
-
                 LabelError.Text = ex.Message;
             }
         }
